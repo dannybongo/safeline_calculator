@@ -1,0 +1,28 @@
+/*--------------------------------------------- Global Styles --------------------------------------------- */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: monospace, sans-serif;
+  color: black;
+
+  /* outline: auto;
+    outline-color: red; */
+}
+
+/*--------------------------------------------- Main Container Styles --------------------------------------------- */
+
+.container1 {
+  margin: 20px;
+  text-align: center;
+  border: 3px solid green;
+}
+
+.container2 {
+  display: flex;
+}
+
+.container3 {
+  display: flex;
+  flex-direction: column;
+}
