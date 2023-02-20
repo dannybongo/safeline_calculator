@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MT Safeline Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container1">
+      <h1>Mettler Toledo</h1>
+      <h2>Signature Touch</h2>
+      <div class="container2">
+        <div class="drawing">
+          <h1>*placeholder*</h1>
+        </div>
+        <div class="containerParameters">
+          <h2>Inputs</h2>
+          <div class="container2Parameters">
+          <form>
+            <label for="">Detector Type:</label>
+            <select id="my-dropdown" name="my-dropdown">
+              <option value="blank"></option>
+              <option value="option1">Signature Touch</option>
+              <option value="option2">RZ Signature Touch</option>
+            </select>
+          </form>
+          <form>
+            <label for="">Case Material:</label>
+            <select id="my-dropdown" name="my-dropdown">
+              <option value="blank"></option>
+              <option value="option1">Stainless Steel</option>
+              <option value="option2">Painted Aluminium</option>
+            </select>
+          </form>
+          <form>
+            <label for="">Case Type:</label>
+            <select id="my-dropdown" name="my-dropdown">
+              <option value="blank"></option>
+              <option value="option1">Medium Duty</option>
+              <option value="option2">Heavy Duty</option>
+            </select>
+          </form>
+          <form>
+            <label for="fname">Apeture Width (mm):</label><br />
+            <input type="text" id="fname" name="fname" /><br />
+          </form>
+          <form>
+            <label for="fname">Apeture Height (mm):</label><br />
+            <input type="text" id="fname" name="fname" /><br />
+          </form>
+          <button>Calculate</button>
+          <h2>Output</h2>
+          <form>
+            <label for="fname">Approximate Weight (Kg):</label><br />
+            <input type="text" id="fname" name="fname" /><br />
+          </form>
+          <form>
+            <label for="fname">Detector Information:</label><br />
+            <input type="text" id="fname" name="fname" /><br />
+          </form>
+          <button>Request Drawing</button>
+          <button>Print PDF</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

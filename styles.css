@@ -7,22 +7,113 @@
   color: black;
 
   /* outline: auto;
-    outline-color: red; */
+  outline-color: red; */
 }
 
 /*--------------------------------------------- Main Container Styles --------------------------------------------- */
 
+/* body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+} */
+
 .container1 {
-  margin: 20px;
   text-align: center;
-  border: 3px solid green;
+  border: 3px solid #022073;
+  border-radius: 20px;
+  width: 1000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
 }
 
 .container2 {
   display: flex;
+  justify-content: center;
 }
 
 .container3 {
+  width: 300px;
   display: flex;
   flex-direction: column;
+  border: 3px solid #99ad6a;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.container3.nonConveyors {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.container2Parameters {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 3px solid #99ad6a;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+h1 {
+  color: #99ad6a;
+}
+
+h2 {
+  margin-top: 10xp;
+  margin-bottom: 10px;
+  color: #022073;
+}
+
+h3 {
+  margin-top: 10xp;
+  margin-bottom: 10px;
+  color: #99ad6a;
+}
+
+button {
+  margin-top: 10xp;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  color: #022073;
+  background-color: #f0f0f0;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  transition: background-color 0.8s ease;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #d9d9d9;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+}
+
+option {
+  width: 300px;
+}
+select {
+  margin-top: 10px;
+  width: 150px;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input {
+  margin-top: 10px;
+  width: 150px;
 }
