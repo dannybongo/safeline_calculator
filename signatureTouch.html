@@ -16,8 +16,8 @@
           <h1>*placeholder*</h1>
         </div>
         <div class="containerParameters">
-          <h2>Inputs</h2>
           <div class="container2Parameters">
+            <h2>Inputs</h2>
           <form>
             <label for="">Detector Type:</label>
             <select id="my-dropdown" name="my-dropdown">
@@ -43,25 +43,28 @@
             </select>
           </form>
           <form>
-            <label for="fname">Apeture Width (mm):</label><br />
-            <input type="text" id="fname" name="fname" /><br />
+            <label>Apeture Width (mm):</label><br />
+            <input type="text"/><br />
           </form>
           <form>
-            <label for="fname">Apeture Height (mm):</label><br />
-            <input type="text" id="fname" name="fname" /><br />
+            <label>Apeture Height (mm):</label><br />
+            <input type="text"><br />
           </form>
-          <button>Calculate</button>
+          <button class="calcButton">Calculate</button>
           <h2>Output</h2>
           <form>
-            <label for="fname">Approximate Weight (Kg):</label><br />
-            <input type="text" id="fname" name="fname" /><br />
+            <label>Approx' Weight (Kg):</label><br />
+            <input type="text"/><br />
           </form>
           <form>
-            <label for="fname">Detector Information:</label><br />
-            <input type="text" id="fname" name="fname" /><br />
+            <label>Detector Information:</label><br />
+            <input type="text" class="detectorInfo"><br />
           </form>
-          <button>Request Drawing</button>
-          <button>Print PDF</button>
+          <div class="buttons">
+            <button>Request Drawing</button>
+            <button>Print PDF</button>
+            <button>Homepage</button>
+          </div>
         </div>
       </div>
     </div>

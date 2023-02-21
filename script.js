@@ -1,4 +1,6 @@
-const buttons = document.querySelectorAll(".new-window-button");
+let buttons = document.querySelectorAll("button");
+console.log(buttons)
+buttons = Array.from(buttons)
 console.log(buttons)
 
 
@@ -17,7 +19,6 @@ buttons.forEach(button => {
 
 
 /*
-
 ChatGPT Comments
 
 In this example, we've created three buttons with a common class name of new-window-button, and we've added a data-url attribute to each button to specify the URL of the page to be loaded. We've also created a reusable openNewWindow() function that takes a URL parameter and uses the window.open() method to load the specified page.
@@ -36,6 +37,4 @@ this. refers to object that is called the function, in this case our button. get
 becuase 'url; is a variable, we can pass this as a argument through out function
 
 the openNewWindow function simply opens out new URl into a new window.
-
-
 */

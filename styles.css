@@ -23,7 +23,6 @@
   text-align: center;
   border: 3px solid #022073;
   border-radius: 20px;
-  width: 1000px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -37,9 +36,6 @@
 }
 
 .container3 {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
   border: 3px solid #99ad6a;
   border-radius: 20px;
   padding: 20px;
@@ -51,11 +47,6 @@
 }
 
 .container2Parameters {
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   border: 3px solid #99ad6a;
   border-radius: 20px;
   padding: 20px;
@@ -66,28 +57,29 @@ h1 {
 }
 
 h2 {
-  margin-top: 10xp;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   color: #022073;
 }
 
 h3 {
-  margin-top: 10xp;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   color: #99ad6a;
 }
 
 button {
-  margin-top: 10xp;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   color: #022073;
   background-color: #f0f0f0;
-  padding: 15px 30px;
+  padding: 5px 10px;
   text-align: center;
   font-size: 16px;
   transition: background-color 0.8s ease;
+  width: 190px;
 }
 
 button:hover {
@@ -116,4 +108,17 @@ label {
 input {
   margin-top: 10px;
   width: 150px;
+  margin-left: auto;
+}
+
+.calcButton {
+  margin-top: 10px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
 }
