@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MT Safeline Calculator</title>
+    <title>Signature Touch Calculation</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -12,59 +12,82 @@
       <h1>Mettler Toledo</h1>
       <h2>Signature Touch</h2>
       <div class="container2">
-        <div class="drawing">
-          <h1>*placeholder*</h1>
+        <div class="container3LHS">
+          <h1>hello</h1>
+          <h1>hello</h1>
+          <h1>hello</h1>
+          <output type="text" id="testA"></output>
+          <output type="text" id="testB"></output>
+          <output type="text" id="testC"></output>
         </div>
-        <div class="containerParameters">
-          <div class="container2Parameters">
-            <h2>Inputs</h2>
-          <form>
-            <label for="">Detector Type:</label>
-            <select id="my-dropdown" name="my-dropdown">
-              <option value="blank"></option>
-              <option value="option1">Signature Touch</option>
-              <option value="option2">RZ Signature Touch</option>
-            </select>
+        <div class="container3RHS">
+          <h2>Inputs</h2>
+          <form action="" method="GET">
+            <div class="formDiv">
+              <label for="detectorType">Detector Type:</label>
+              <select id="detectorType" name="detectorType">
+                <option value="" disabled selected hidden>Select</option>
+                <option value="option1">Signature Touch</option>
+                <option value="option2">RZ Signature Touch</option>
+              </select>
+            </div>
+            <div class="formDiv">
+              <label for="caseMaterial">Case Material:</label>
+              <select id="caseMaterial" name="caseMaterial" required>
+                <option value="" disabled selected hidden>Select</option>
+                <option value="option1">Stainless Steel</option>
+                <option value="option2">Painted Aluminium</option>
+              </select>
+            </div>
+            <div class="formDiv">
+              <label for="caseType">Case Type:</label>
+              <select id="caseType" name="caseType" required>
+                <option value="" disabled selected hidden>Select</option>
+                <option value="option1">Medium Duty</option>
+                <option value="option2">Heavy Duty</option>
+              </select>
+            </div>
+            <div class="formDiv">
+              <label>Apeture Width (mm):</label>
+              <input
+                type="text"
+                id="apetureWidth"
+                name="apetureWidth"
+                placeholder="Apeture Width"
+                required
+              />
+            </div>
+            <div class="formDiv">
+              <label>Apeture Height (mm):</label>
+              <input
+                type="text"
+                id="apetureHeight"
+                name="apetureHeight"
+                placeholder="Apeture Height"
+                required
+              />
+            </div>
+            <div class="buttons">
+              <button type="button" id="calculateBtn">Calculate</button>
+              <button class="resetButton">Reset</button>
+              <h2>Output</h2>
+            </div>
+            <div class="formDiv">
+              <label for="Weight">Approx' Weight (Kg):</label>
+              <output type="text"></output>
+            </div>
+            <div class="formDiv">
+              <label for="detectorInfo" class="labelDetInfo"
+                >Detector Information:</label
+              >
+              <output type="text" class="outputDetInfo"></output>
+            </div>
+            <div class="buttons">
+              <button>Request Drawing</button>
+              <button>Print PDF</button>
+              <button>Homepage</button>
+            </div>
           </form>
-          <form>
-            <label for="">Case Material:</label>
-            <select id="my-dropdown" name="my-dropdown">
-              <option value="blank"></option>
-              <option value="option1">Stainless Steel</option>
-              <option value="option2">Painted Aluminium</option>
-            </select>
-          </form>
-          <form>
-            <label for="">Case Type:</label>
-            <select id="my-dropdown" name="my-dropdown">
-              <option value="blank"></option>
-              <option value="option1">Medium Duty</option>
-              <option value="option2">Heavy Duty</option>
-            </select>
-          </form>
-          <form>
-            <label>Apeture Width (mm):</label><br />
-            <input type="text"/><br />
-          </form>
-          <form>
-            <label>Apeture Height (mm):</label><br />
-            <input type="text"><br />
-          </form>
-          <button class="calcButton">Calculate</button>
-          <h2>Output</h2>
-          <form>
-            <label>Approx' Weight (Kg):</label><br />
-            <input type="text"/><br />
-          </form>
-          <form>
-            <label>Detector Information:</label><br />
-            <input type="text" class="detectorInfo"><br />
-          </form>
-          <div class="buttons">
-            <button>Request Drawing</button>
-            <button>Print PDF</button>
-            <button>Homepage</button>
-          </div>
         </div>
       </div>
     </div>

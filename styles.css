@@ -12,13 +12,6 @@
 
 /*--------------------------------------------- Main Container Styles --------------------------------------------- */
 
-/* body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-} */
-
 .container1 {
   text-align: center;
   border: 3px solid #022073;
@@ -46,10 +39,20 @@
   margin-right: 20px;
 }
 
-.container2Parameters {
+.container3RHS {
   border: 3px solid #99ad6a;
   border-radius: 20px;
   padding: 20px;
+  margin: 20px;
+}
+
+.container3LHS {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #99ad6a;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
 }
 
 h1 {
@@ -89,8 +92,20 @@ button:hover {
 
 form {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   width: 350px;
+}
+
+.formDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+}
+
+.formDiv2 {
+  display: flex;
+  text-align: justify;
 }
 
 option {
@@ -98,7 +113,7 @@ option {
 }
 select {
   margin-top: 10px;
-  width: 150px;
+  width: 160px;
 }
 
 label {
@@ -107,11 +122,24 @@ label {
 
 input {
   margin-top: 10px;
-  width: 150px;
+  width: 160px;
   margin-left: auto;
 }
 
-.calcButton {
+output {
+  margin-top: 10px;
+  width: 160px;
+  margin-left: auto;
+  border: 1px solid #757575;
+  border-radius: 2px;
+  height: 20px;
+}
+
+.labelDetInfo {
+  text-align: left;
+}
+
+#calculateBtn {
   margin-top: 10px;
 }
 
