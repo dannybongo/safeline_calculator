@@ -13,12 +13,30 @@
       <h2>Signature Touch</h2>
       <div class="container2">
         <div class="container3LHS">
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <output type="text" id="testA"></output>
-          <output type="text" id="testB"></output>
-          <output type="text" id="testC"></output>
+          <div>
+            <h3>Apeture Height</h3>
+            <output type="text" id="outputApetureHeight"></output>
+          </div>
+          <div>
+            <h3>Apeture Width</h3>
+            <output type="text" id="outputApetureWidth"></output>
+          </div>
+          <div>
+            <h3>Dim 'A'</h3>
+            <output type="text" id="dimensionA"></output>
+          </div>
+          <div>
+            <h3>Dim 'Z'</h3>
+            <output type="text" id="dimensionZ"></output>
+          </div>
+          <div>
+            <h3>Dim 'Zct'</h3>
+            <output type="text" id="dimensionZcT"></output>
+          </div>
+          <div>
+            <h3>Dim 'Wct'</h3>
+            <output type="text" id="dimensionWcT"></output>
+          </div>
         </div>
         <div class="container3RHS">
           <h2>Inputs</h2>
@@ -27,8 +45,8 @@
               <label for="detectorType">Detector Type:</label>
               <select id="detectorType" name="detectorType">
                 <option value="" disabled selected hidden>Select</option>
-                <option value="option1">Signature Touch</option>
-                <option value="option2">RZ Signature Touch</option>
+                <option value="signatureTouch">Signature Touch</option>
+                <option value="rzSignatureTouch">RZ Signature Touch</option>
               </select>
             </div>
             <div class="formDiv">
@@ -48,25 +66,26 @@
               </select>
             </div>
             <div class="formDiv">
-              <label>Apeture Width (mm):</label>
-              <input
-                type="text"
-                id="apetureWidth"
-                name="apetureWidth"
-                placeholder="Apeture Width"
-                required
-              />
-            </div>
-            <div class="formDiv">
               <label>Apeture Height (mm):</label>
               <input
                 type="text"
-                id="apetureHeight"
-                name="apetureHeight"
+                id="inputApetureHeight"
+                name="inputApetureHeight"
                 placeholder="Apeture Height"
                 required
               />
             </div>
+            <div class="formDiv">
+              <label>Apeture Width (mm):</label>
+              <input
+                type="text"
+                id="inputApetureWidth"
+                name="inputApetureWidth"
+                placeholder="Apeture Width"
+                required
+              />
+            </div>
+
             <div class="buttons">
               <button type="button" id="calculateBtn">Calculate</button>
               <button class="resetButton">Reset</button>

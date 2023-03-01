@@ -1,7 +1,9 @@
+
+//querySelector and function for opening a new window from home page
+
 let buttons = document.querySelectorAll(".linkBtn");
-console.log(buttons)
-// buttons = Array.from(buttons)
-// console.log(buttons)
+let inputApetureWidth = ""
+let inputApetureHeight = ""
 
 function openNewWindow(url) {
     window.open(url, "_blank");
@@ -9,33 +11,100 @@ function openNewWindow(url) {
 
 buttons.forEach(button => {
   button.addEventListener("click", function() {
-    console.log("hello")
     const url = this.getAttribute("data-url");
-    console.log(url)
     openNewWindow(url);
   });
 });
 
 
+
+
+
+//Signature touch calculations
 let calculateBtn = document.getElementById("calculateBtn");
-console.log(calculateBtn)
 calculateBtn.addEventListener("click", calculate);
-
-
-
-
 
 function calculate() {
   // Get the values of the input tags
-  let input1Value = document.getElementById("apetureWidth").value;
-  let input2Value = document.getElementById("apetureHeight").value;
+  let inputApetureWidth = parseInt(document.getElementById("inputApetureWidth").value);
+  let inputApetureHeight = parseInt(document.getElementById("inputApetureHeight").value);
 
-  // Set the values of the output tags
-  document.getElementById("testA").value = input1Value;
-  document.getElementById("testB").value = input2Value;
-  console.log(input1Value)
-  console.log(input2Value)
+  // Output metal detector apeture height and width
+  document.getElementById("outputApetureWidth").value = inputApetureWidth;
+  document.getElementById("outputApetureHeight").value = inputApetureHeight;
+
+  // Output dimension A
+  let detectorTypeSelect = document.getElementById('detectorType');
+
+    if (detectorTypeSelect.value === 'signatureTouch') {
+      signatureTouchDimACalc(inputApetureWidth,inputApetureHeight);
+      signatureTouchDimZCalc(inputApetureWidth,inputApetureHeight);
+      signatureTouchDimZcTCalc(inputApetureWidth,inputApetureHeight);
+      signatureTouchDimWcTCalc(inputApetureWidth);
+    }
+    else {(detectorTypeSelect.value === 'rzSignatureTouch');{
+      console.log('rzSignatureTouch');
+    }}
+  };
+
+
+function signatureTouchDimACalc(inputApetureWidth,inputApetureHeight){
+
+  if (inputApetureHeight === 50 && inputApetureWidth >= 100 && inputApetureWidth <= 1000){
+    dimensionA = 137.5
+    document.getElementById("dimensionA").value = dimensionA;
+  } else if (inputApetureHeight >= 75 && inputApetureWidth >= 100 && inputApetureWidth <= 250){
+    dimensionA = 125
+    document.getElementById("dimensionA").value = dimensionA;
+  } else if (inputApetureHeight >= 75 && inputApetureWidth >= 275 && inputApetureWidth <= 1000){
+    dimensionA = 135
+    document.getElementById("dimensionA").value = dimensionA;
+  } else if (inputApetureHeight >= 50 && inputApetureWidth >= 1025 && inputApetureWidth <= 1500){
+    dimensionA = 145
+    document.getElementById("dimensionA").value = dimensionA;
+  } else if (inputApetureHeight >= 50 && inputApetureWidth >= 1525 && inputApetureWidth <= 2000){
+    dimensionA = 155
+    document.getElementById("dimensionA").value = dimensionA;
+  } else if (inputApetureHeight >= 50 && inputApetureWidth >= 2025 && inputApetureWidth <= 2500){
+    dimensionA = 165
+    document.getElementById("dimensionA").value = dimensionA;
+  } else if (inputApetureHeight >= 50 && inputApetureWidth >= 2525 && inputApetureWidth <= 3000){
+    dimensionA = 175
+    document.getElementById("dimensionA").value = dimensionA;
+}}
+
+
+function signatureTouchDimZCalc(inputApetureWidth,inputApetureHeight){
+  let dimensionZ = ""
+  if(inputApetureWidth <= inputApetureHeight){
+    dimensionZ = parseInt(inputApetureWidth)
+  } else {
+    dimensionZ =parseInt(inputApetureHeight)
+  }
+  dimensionZ = dimensionZ/2 + 163
+  document.getElementById("dimensionZ").value = dimensionZ;
 }
+
+function signatureTouchDimZcTCalc(inputApetureWidth,inputApetureHeight){
+  let dimensionZcT = ""
+  if(inputApetureWidth <= inputApetureHeight){
+    dimensionZcT = parseInt(inputApetureWidth)
+  } else {
+    dimensionZcT =parseInt(inputApetureHeight)
+  }
+  dimensionZcT = dimensionZcT/2 + 125
+  document.getElementById("dimensionZcT").value = dimensionZcT;
+  
+}
+
+function signatureTouchDimWcTCalc(inputApetureWidth){
+  let dimensionWcT = inputApetureWidth + 200
+  document.getElementById("dimensionWcT").value = dimensionWcT;
+
+
+}
+
+
 
 
 /*
