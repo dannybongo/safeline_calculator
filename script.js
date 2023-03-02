@@ -75,13 +75,22 @@ function signatureTouchDimACalc(inputApetureWidth,inputApetureHeight){
 
 
 function signatureTouchDimZCalc(inputApetureWidth,inputApetureHeight){
-  let dimensionZ = ""
-  if(inputApetureWidth <= inputApetureHeight){
-    dimensionZ = parseInt(inputApetureWidth)
-  } else {
-    dimensionZ =parseInt(inputApetureHeight)
+  
+  //Math.min selects the lower value of the 2 variables
+  let dimensionZ = Math.min(inputApetureWidth, inputApetureHeight)
+
+  console.log(dimensionZ)
+
+  let caseMaterialSelect = document.getElementById("caseMaterial");
+  console.log(caseMaterialSelect.value)
+
+  if (caseMaterialSelect.value === "stainlessSteel"){
+    dimensionZ = dimensionZ/2 + 163
+    console.log(dimensionZ)
+  } else if (caseMaterialSelect.value === "paintedAluminium"){
+    dimensionZ = dimensionZ/2 + 169
+    console.log(dimensionZ)
   }
-  dimensionZ = dimensionZ/2 + 163
   document.getElementById("dimensionZ").value = dimensionZ;
 }
 
