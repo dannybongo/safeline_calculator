@@ -14,32 +14,35 @@ buttons.forEach(button => {
   });
 });
 
-
 //needed to initialise this button here because we need this variable in 2 functions
 let caseMaterialSelect = document.getElementById("caseMaterial");
+
+
 
 //Signature touch calculations
 let calculateBtn = document.getElementById("calculateBtn");
 calculateBtn.addEventListener("click", calculate);
 
 function calculate() {
-  // Get the values of the input tags
+
   let inputApetureWidth = parseInt(document.getElementById("inputApetureWidth").value);
   let inputApetureHeight = parseInt(document.getElementById("inputApetureHeight").value);
+  let apetureMin = Math.min(inputApetureWidth, inputApetureHeight);
+  let caseMaterialSelect = document.getElementById("caseMaterial");
+  let caseDutyType = document.getElementById('caseDutyType');
+  let detectorTypeSelect = document.getElementById('detectorType');
 
-  // Output metal detector apeture height and width
   document.getElementById("outputApetureWidth").value = inputApetureWidth;
   document.getElementById("outputApetureHeight").value = inputApetureHeight;
 
-  // Output dimension A
-  let detectorTypeSelect = document.getElementById('detectorType');
-
+ 
     if (detectorTypeSelect.value === 'signatureTouch') {
       signatureTouchDimACalc(inputApetureWidth,inputApetureHeight);
-      signatureTouchDimZCalc(inputApetureWidth,inputApetureHeight);
-      signatureTouchDimZcTCalc(inputApetureWidth,inputApetureHeight);
+      signatureTouchDimZCalc(apetureMin, caseMaterialSelect);
+      signatureTouchDimZcTCalc(apetureMin, caseMaterialSelect);
       signatureTouchDimWcTCalc(inputApetureWidth);
-      signatureTouchThkCalc();
+      signatureTouchThkCalc(caseDutyType, caseMaterialSelect);
+      signatureTouchDimMFZCalc(inputApetureWidth,inputApetureHeight);
     }
     else {(detectorTypeSelect.value === 'rzSignatureTouch');{
       console.log('rzSignatureTouch');
@@ -73,29 +76,17 @@ function signatureTouchDimACalc(inputApetureWidth,inputApetureHeight){
 }}
 
 
-function signatureTouchDimZCalc(inputApetureWidth,inputApetureHeight){
-  
-  //Math.min selects the lower value of the 2 variables
-  let dimensionZ = Math.min(inputApetureWidth, inputApetureHeight)
-
+function signatureTouchDimZCalc(apetureMin, caseMaterialSelect){
   if (caseMaterialSelect.value === "stainlessSteel"){
-    dimensionZ = dimensionZ/2 + 163
-    console.log(dimensionZ)
+    dimensionZ = apetureMin/2 + 163
   } else if (caseMaterialSelect.value === "paintedAluminium"){
-    dimensionZ = dimensionZ/2 + 169
-    console.log(dimensionZ)
+    dimensionZ = apetureMin/2 + 169
   }
   document.getElementById("dimensionZ").value = dimensionZ;
 }
 
-function signatureTouchDimZcTCalc(inputApetureWidth,inputApetureHeight){
-  let dimensionZcT = ""
-  if(inputApetureWidth <= inputApetureHeight){
-    dimensionZcT = parseInt(inputApetureWidth)
-  } else {
-    dimensionZcT =parseInt(inputApetureHeight)
-  }
-  dimensionZcT = dimensionZcT/2 + 125
+function signatureTouchDimZcTCalc(apetureMin){
+  dimensionZcT = apetureMin/2 + 125
   document.getElementById("dimensionZcT").value = dimensionZcT;
 }
 
@@ -105,11 +96,7 @@ function signatureTouchDimWcTCalc(inputApetureWidth){
 }
 
 
-function signatureTouchThkCalc(){
-  let caseDutyType = document.getElementById('caseDutyType');
-  console.log(caseMaterialSelect.value)
-  console.log(caseDutyType.value)
-
+function signatureTouchThkCalc(caseDutyType, caseMaterialSelect){
 
   if (caseDutyType.value === 'heavyDuty' && caseMaterialSelect.value === "paintedAluminium"){
     document.getElementById("dimensionThk_LHS").value = 17
@@ -129,11 +116,16 @@ function signatureTouchThkCalc(){
   }
 }
 
+//Calculates MFZ & DMFZ
+function signatureTouchDimMFZCalc(apetureMin){
+  let MFZ = apetureMin * 1.5
+  let DMFZ = apetureMin * 2
+  document.getElementById("dimensionMFZ_LHS").value = MFZ
+  document.getElementById("dimensionMFZ_RHS").value = MFZ
+  document.getElementById("dimensionDMFZ_LHS").value = DMFZ
+  document.getElementById("dimensionDMFZ_RHS").value = DMFZ
+}
 
-// SS/MD 13
-// SS/HD 17
-// P/MD 4.5
-// P/HD 17
 
 
 
