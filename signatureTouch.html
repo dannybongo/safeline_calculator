@@ -37,13 +37,21 @@
             <h3>Dim 'Wct'</h3>
             <output type="text" id="dimensionWcT"></output>
           </div>
+          <div>
+            <h3>Dim 'Thk'</h3>
+            <output type="text" id="dimensionThk_LHS"></output>
+          </div>
+          <div>
+            <h3>Dim 'Thk'</h3>
+            <output type="text" id="dimensionThk_RHS"></output>
+          </div>
         </div>
         <div class="container3RHS">
           <h2>Inputs</h2>
           <form action="" method="GET">
             <div class="formDiv">
               <label for="detectorType">Detector Type:</label>
-              <select id="detectorType" name="detectorType">
+              <select id="detectorType" name="detectorType" required>
                 <option value="" disabled selected hidden>Select</option>
                 <option value="signatureTouch">Signature Touch</option>
                 <option value="rzSignatureTouch">RZ Signature Touch</option>
@@ -58,11 +66,11 @@
               </select>
             </div>
             <div class="formDiv">
-              <label for="caseType">Case Type:</label>
-              <select id="caseType" name="caseType" required>
+              <label for="caseDutyType">Case Type:</label>
+              <select id="caseDutyType" name="caseDutyType" required>
                 <option value="" disabled selected hidden>Select</option>
-                <option value="option1">Medium Duty</option>
-                <option value="option2">Heavy Duty</option>
+                <option value="mediumDuty">Medium Duty</option>
+                <option value="heavyDuty">Heavy Duty</option>
               </select>
             </div>
             <div class="formDiv">

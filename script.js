@@ -2,8 +2,6 @@
 //querySelector and function for opening a new window from home page
 
 let buttons = document.querySelectorAll(".linkBtn");
-let inputApetureWidth = ""
-let inputApetureHeight = ""
 
 function openNewWindow(url) {
     window.open(url, "_blank");
@@ -17,8 +15,8 @@ buttons.forEach(button => {
 });
 
 
-
-
+//needed to initialise this button here because we need this variable in 2 functions
+let caseMaterialSelect = document.getElementById("caseMaterial");
 
 //Signature touch calculations
 let calculateBtn = document.getElementById("calculateBtn");
@@ -41,6 +39,7 @@ function calculate() {
       signatureTouchDimZCalc(inputApetureWidth,inputApetureHeight);
       signatureTouchDimZcTCalc(inputApetureWidth,inputApetureHeight);
       signatureTouchDimWcTCalc(inputApetureWidth);
+      signatureTouchThkCalc();
     }
     else {(detectorTypeSelect.value === 'rzSignatureTouch');{
       console.log('rzSignatureTouch');
@@ -79,11 +78,6 @@ function signatureTouchDimZCalc(inputApetureWidth,inputApetureHeight){
   //Math.min selects the lower value of the 2 variables
   let dimensionZ = Math.min(inputApetureWidth, inputApetureHeight)
 
-  console.log(dimensionZ)
-
-  let caseMaterialSelect = document.getElementById("caseMaterial");
-  console.log(caseMaterialSelect.value)
-
   if (caseMaterialSelect.value === "stainlessSteel"){
     dimensionZ = dimensionZ/2 + 163
     console.log(dimensionZ)
@@ -103,15 +97,44 @@ function signatureTouchDimZcTCalc(inputApetureWidth,inputApetureHeight){
   }
   dimensionZcT = dimensionZcT/2 + 125
   document.getElementById("dimensionZcT").value = dimensionZcT;
-  
 }
 
 function signatureTouchDimWcTCalc(inputApetureWidth){
   let dimensionWcT = inputApetureWidth + 200
   document.getElementById("dimensionWcT").value = dimensionWcT;
-
-
 }
+
+
+function signatureTouchThkCalc(){
+  let caseDutyType = document.getElementById('caseDutyType');
+  console.log(caseMaterialSelect.value)
+  console.log(caseDutyType.value)
+
+
+  if (caseDutyType.value === 'heavyDuty' && caseMaterialSelect.value === "paintedAluminium"){
+    document.getElementById("dimensionThk_LHS").value = 17
+    document.getElementById("dimensionThk_RHS").value = 17
+  }
+  if (caseDutyType.value === 'heavyDuty' && caseMaterialSelect.value === "stainlessSteel"){
+    document.getElementById("dimensionThk_LHS").value = 17
+    document.getElementById("dimensionThk_RHS").value = 17
+  }
+  else if (caseDutyType.value === 'mediumDuty' && caseMaterialSelect.value === "paintedAluminium"){
+    document.getElementById("dimensionThk_LHS").value = 4.5
+    document.getElementById("dimensionThk_RHS").value = 4.5
+  }
+  else if (caseDutyType.value === 'mediumDuty' && caseMaterialSelect.value === "stainlessSteel"){
+    document.getElementById("dimensionThk_LHS").value = 13
+    document.getElementById("dimensionThk_RHS").value = 13
+  }
+}
+
+
+// SS/MD 13
+// SS/HD 17
+// P/MD 4.5
+// P/HD 17
+
 
 
 
