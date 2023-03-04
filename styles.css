@@ -17,10 +17,11 @@
   border: 3px solid #022073;
   border-radius: 20px;
   position: absolute;
-  top: 50%;
+  /* top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   padding: 20px;
+  margin: 50px;
 }
 
 .container2 {
@@ -47,8 +48,8 @@
 }
 
 .container3LHS {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  display: inline-block;
   border: 3px solid #99ad6a;
   border-radius: 20px;
   padding: 20px;
@@ -149,4 +150,94 @@ output {
   justify-content: center;
   flex-direction: column;
   margin-top: 10px;
+}
+
+img {
+  width: 900px;
+  height: 450px;
+  display: block;
+}
+
+#outputApetureHeight {
+  position: absolute;
+  top: 17.5%;
+  left: 3%;
+}
+
+#outputApetureWidth {
+  position: absolute;
+  top: 34%;
+  left: 22.7%;
+}
+
+#dimensionA1 {
+  position: absolute;
+  top: 24%;
+  left: 3%;
+}
+
+#dimensionA2 {
+  position: absolute;
+  top: 11%;
+  left: 3%;
+}
+
+#dimensionA3 {
+  position: absolute;
+  top: 5.5%;
+  left: 10%;
+}
+
+#dimensionWcT {
+  position: absolute;
+  top: 38%;
+  left: 22.7%;
+}
+
+#dimensionThk_RHS {
+  position: absolute;
+  top: 40%;
+  left: 80%;
+}
+
+#dimensionThk_LHS {
+  position: absolute;
+  top: 40%;
+  left: 55%;
+}
+
+#dimensionZ {
+  position: absolute;
+  top: 50%;
+  left: 69%;
+}
+
+#dimensionZcT {
+  position: absolute;
+  top: 42%;
+  left: 69%;
+}
+
+#dimensionMFZ_LHS {
+  position: absolute;
+  top: 10%;
+  left: 60%;
+}
+
+#dimensionMFZ_RHS {
+  position: absolute;
+  top: 10%;
+  left: 80%;
+}
+
+#dimensionDMFZ_LHS {
+  position: absolute;
+  top: 7%;
+  left: 60%;
+}
+
+#dimensionDMFZ_RHS {
+  position: absolute;
+  top: 7%;
+  left: 80%;
 }
