@@ -166,7 +166,7 @@ img {
 
 #outputApetureWidth {
   position: absolute;
-  top: 62.5%;
+  top: 62.8%;
   left: 22.6%;
 }
 
@@ -240,4 +240,70 @@ img {
   position: absolute;
   top: 5%;
   left: 79.5%;
+}
+
+#dimensionZ2_LHS {
+  position: absolute;
+  top: 65%;
+  left: 66%;
+}
+
+#dimensionZ2_RHS {
+  position: absolute;
+  top: 65%;
+  left: 72%;
+}
+
+#dimension100_LHS {
+  position: absolute;
+  top: 62.8%;
+  left: 11.3%;
+}
+
+#dimension100_RHS {
+  position: absolute;
+  top: 62.8%;
+  left: 34%;
+}
+
+#dimension100_RHS {
+  position: absolute;
+  top: 62.8%;
+  left: 34%;
+}
+
+#dimension88 {
+  position: absolute;
+  top: 11%;
+  left: 48.5%;
+}
+
+#cableDim {
+  position: absolute;
+  top: 62.8%;
+  left: 43.5%;
+}
+
+#lengthPlusModule {
+  position: absolute;
+  top: 73.5%;
+  left: 27%;
+}
+
+#length {
+  position: absolute;
+  top: 5%;
+  left: 30%;
+}
+
+#height {
+  position: absolute;
+  top: 37%;
+  right: 85%;
+}
+
+#lengthFrontToApeture {
+  position: absolute;
+  top: 11%;
+  left: 39.5%;
 }

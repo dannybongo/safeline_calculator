@@ -29,13 +29,49 @@ function calculate() {
   let array = [];
   for (let i = 50; i <= 1000; i += 25) {
     array.push(i)
+  }
 
   document.getElementById("outputApetureWidth").value = inputApetureWidth;
   document.getElementById("outputApetureHeight").value = inputApetureHeight;
+  document.getElementById("dimension100_RHS").value = 100;
+  document.getElementById("dimension100_LHS").value = 100;
+  document.getElementById("dimension88").value = 88;
 
-  //The Sig-Touch & Sig-Touch RZ share the same WcT and flange thickness dimensions
+  //The Sig-Touch & Sig-Touch RZ share the below calculated dimensions in common
   signatureTouchDimWcTCalc(inputApetureWidth);
   signatureTouchThkCalc(caseDutyType, caseMaterialSelect);
+  signatureTouchCableDimCalc(caseMaterialSelect);
+
+  function signatureTouchDimWcTCalc(inputApetureWidth){
+    let dimensionWcT = inputApetureWidth + 200
+    document.getElementById("dimensionWcT").value = dimensionWcT;
+  }
+  function signatureTouchThkCalc(caseDutyType, caseMaterialSelect){
+  
+    if (caseDutyType.value === "heavyDuty" && caseMaterialSelect.value === "paintedAluminium"){
+      document.getElementById("dimensionThk_LHS").value = 17
+      document.getElementById("dimensionThk_RHS").value = 17
+    }
+    if (caseDutyType.value === "heavyDuty" && caseMaterialSelect.value === "stainlessSteel"){
+      document.getElementById("dimensionThk_LHS").value = 17
+      document.getElementById("dimensionThk_RHS").value = 17
+    }
+    else if (caseDutyType.value === "mediumDuty" && caseMaterialSelect.value === "paintedAluminium"){
+      document.getElementById("dimensionThk_LHS").value = 4.5
+      document.getElementById("dimensionThk_RHS").value = 4.5
+    }
+    else if (caseDutyType.value === "mediumDuty" && caseMaterialSelect.value === "stainlessSteel"){
+      document.getElementById("dimensionThk_LHS").value = 13
+      document.getElementById("dimensionThk_RHS").value = 13
+    }
+  }
+  function signatureTouchCableDimCalc(caseMaterialSelect){
+    if (caseMaterialSelect.value === "stainlessSteel" ){
+      document.getElementById("cableDim").value = 122;
+    } else {
+      document.getElementById("cableDim").value = 125;
+    }
+  }
 
   if (detectorTypeSelect.value === "signatureTouch") {
     signatureTouchCalc(inputApetureWidth, inputApetureHeight, apetureMin, caseMaterialSelect)
@@ -43,14 +79,91 @@ function calculate() {
     signatureTouchRZCalc(inputApetureWidth, inputApetureHeight, apetureMin, caseMaterialSelect)
   }
 }
+
+  function signatureTouchCalc(inputApetureWidth, inputApetureHeight, apetureMin, caseMaterialSelect){
+    signatureTouchDimACalc(inputApetureWidth,inputApetureHeight);
+    // signatureTouchHeightCalc(inputApetureHeight, dimensionA);
+    signatureTouchDimZCalc(apetureMin, caseMaterialSelect);
+    signatureTouchDimZcTCalc(apetureMin, caseMaterialSelect);
+    signatureTouchDimMFZCalc(inputApetureWidth, inputApetureHeight);
+
+    function signatureTouchDimACalc(inputApetureWidth,inputApetureHeight){
+      if (inputApetureHeight === 50 && inputApetureWidth >= 100 && inputApetureWidth <= 1000){
+        dimensionA = 137.5
+      } else if (inputApetureHeight >= 75 && inputApetureWidth >= 100 && inputApetureWidth <= 250){
+        dimensionA = 125
+      } else if (inputApetureHeight >= 75 && inputApetureWidth >= 275 && inputApetureWidth <= 1000){
+        dimensionA = 135
+      } else if (inputApetureHeight >= 50 && inputApetureWidth >= 1025 && inputApetureWidth <= 1500){
+        dimensionA = 145
+      } else if (inputApetureHeight >= 50 && inputApetureWidth >= 1525 && inputApetureWidth <= 2000){
+        dimensionA = 155
+      } else if (inputApetureHeight >= 50 && inputApetureWidth >= 2025 && inputApetureWidth <= 2500){
+        dimensionA = 165
+      } else if (inputApetureHeight >= 50 && inputApetureWidth >= 2525 && inputApetureWidth <= 3000){
+        dimensionA = 175
+      }
+      
+      document.getElementById("dimensionA1").value = dimensionA
+      document.getElementById("dimensionA2").value = dimensionA
+      document.getElementById("dimensionA3").value = dimensionA
+      
+      signatureTouchLengthCalc(inputApetureWidth, dimensionA);
+      signatureTouchHeightCalc(inputApetureHeight, dimensionA);
+      
+      function signatureTouchLengthCalc(inputApetureWidth, dimensionA){
+        let length = (2 * inputApetureWidth) + dimensionA + 172 - 6 - 6
+        let lengthPlusModule = length + 88
+        let lengthFrontToApeture = length - inputApetureWidth - dimensionA
+
+        document.getElementById("length").value = length
+        document.getElementById("lengthPlusModule").value = lengthPlusModule
+        document.getElementById("lengthFrontToApeture").value = lengthFrontToApeture
+      }
+
+      function signatureTouchHeightCalc(inputApetureHeight, dimensionA){
+        let height = dimensionA + dimensionA + inputApetureHeight
+        document.getElementById("height").value = height
+      }
+    }
+    function signatureTouchDimZCalc(apetureMin, caseMaterialSelect){
+      if (caseMaterialSelect.value === "stainlessSteel"){
+        dimensionZ = apetureMin/2 + 163
+      } else if (caseMaterialSelect.value === "paintedAluminium"){
+        dimensionZ = apetureMin/2 + 169
+      }
+      document.getElementById("dimensionZ").value = dimensionZ;
+      document.getElementById("dimensionZ2_LHS").value = dimensionZ/2;
+      document.getElementById("dimensionZ2_RHS").value = dimensionZ/2;
+    }
+    function signatureTouchDimZcTCalc(apetureMin){
+      dimensionZcT = apetureMin/2 + 125
+      document.getElementById("dimensionZcT").value = dimensionZcT;
+    }
+    function signatureTouchDimMFZCalc(apetureMin){
+      //Calculates MFZ & DMFZ
+      let MFZ = apetureMin * 1.5
+      let DMFZ = apetureMin * 2
+      document.getElementById("dimensionMFZ_LHS").value = MFZ
+      document.getElementById("dimensionMFZ_RHS").value = MFZ
+      document.getElementById("dimensionDMFZ_LHS").value = DMFZ
+      document.getElementById("dimensionDMFZ_RHS").value = DMFZ
+    }
 }
 
-function signatureTouchCalc(inputApetureWidth, inputApetureHeight, apetureMin, caseMaterialSelect){
-  signatureTouchDimACalc(inputApetureWidth,inputApetureHeight);
-  signatureTouchDimZCalc(apetureMin, caseMaterialSelect);
-  signatureTouchDimZcTCalc(apetureMin, caseMaterialSelect);
-  signatureTouchDimMFZCalc(inputApetureWidth,inputApetureHeight);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function signatureTouchRZCalc(inputApetureWidth, inputApetureHeight, apetureMin, caseMaterialSelect){
 
@@ -121,78 +234,7 @@ function signatureTouchRZ_DimZcT_SS_Calc(inputApetureHeight, inputApetureWidth, 
   }
  }
 
-function signatureTouchDimACalc(inputApetureWidth,inputApetureHeight){
 
-  if (inputApetureHeight === 50 && inputApetureWidth >= 100 && inputApetureWidth <= 1000){
-    dimensionA = 137.5
-  } else if (inputApetureHeight >= 75 && inputApetureWidth >= 100 && inputApetureWidth <= 250){
-    dimensionA = 125
-  } else if (inputApetureHeight >= 75 && inputApetureWidth >= 275 && inputApetureWidth <= 1000){
-    dimensionA = 135
-  } else if (inputApetureHeight >= 50 && inputApetureWidth >= 1025 && inputApetureWidth <= 1500){
-    dimensionA = 145
-  } else if (inputApetureHeight >= 50 && inputApetureWidth >= 1525 && inputApetureWidth <= 2000){
-    dimensionA = 155
-  } else if (inputApetureHeight >= 50 && inputApetureWidth >= 2025 && inputApetureWidth <= 2500){
-    dimensionA = 165
-  } else if (inputApetureHeight >= 50 && inputApetureWidth >= 2525 && inputApetureWidth <= 3000){
-    dimensionA = 175
-  }
-  document.getElementById("dimensionA1").value = dimensionA
-  document.getElementById("dimensionA2").value = dimensionA
-  document.getElementById("dimensionA3").value = dimensionA
-  }
-
-
-function signatureTouchDimZCalc(apetureMin, caseMaterialSelect){
-  if (caseMaterialSelect.value === "stainlessSteel"){
-    dimensionZ = apetureMin/2 + 163
-  } else if (caseMaterialSelect.value === "paintedAluminium"){
-    dimensionZ = apetureMin/2 + 169
-  }
-  document.getElementById("dimensionZ").value = dimensionZ;
-}
-
-function signatureTouchDimZcTCalc(apetureMin){
-  dimensionZcT = apetureMin/2 + 125
-  document.getElementById("dimensionZcT").value = dimensionZcT;
-}
-
-function signatureTouchDimWcTCalc(inputApetureWidth){
-  let dimensionWcT = inputApetureWidth + 200
-  document.getElementById("dimensionWcT").value = dimensionWcT;
-}
-
-
-function signatureTouchThkCalc(caseDutyType, caseMaterialSelect){
-
-  if (caseDutyType.value === "heavyDuty" && caseMaterialSelect.value === "paintedAluminium"){
-    document.getElementById("dimensionThk_LHS").value = 17
-    document.getElementById("dimensionThk_RHS").value = 17
-  }
-  if (caseDutyType.value === "heavyDuty" && caseMaterialSelect.value === "stainlessSteel"){
-    document.getElementById("dimensionThk_LHS").value = 17
-    document.getElementById("dimensionThk_RHS").value = 17
-  }
-  else if (caseDutyType.value === "mediumDuty" && caseMaterialSelect.value === "paintedAluminium"){
-    document.getElementById("dimensionThk_LHS").value = 4.5
-    document.getElementById("dimensionThk_RHS").value = 4.5
-  }
-  else if (caseDutyType.value === "mediumDuty" && caseMaterialSelect.value === "stainlessSteel"){
-    document.getElementById("dimensionThk_LHS").value = 13
-    document.getElementById("dimensionThk_RHS").value = 13
-  }
-}
-
-//Calculates MFZ & DMFZ
-function signatureTouchDimMFZCalc(apetureMin){
-  let MFZ = apetureMin * 1.5
-  let DMFZ = apetureMin * 2
-  document.getElementById("dimensionMFZ_LHS").value = MFZ
-  document.getElementById("dimensionMFZ_RHS").value = MFZ
-  document.getElementById("dimensionDMFZ_LHS").value = DMFZ
-  document.getElementById("dimensionDMFZ_RHS").value = DMFZ
-}
 
 
 
