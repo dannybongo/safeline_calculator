@@ -131,8 +131,8 @@ output {
   margin-top: 10px;
   width: 160px;
   margin-left: auto;
-  border: 1px solid #757575;
-  border-radius: 2px;
+  /* border: 1px solid #757575;
+  border-radius: 2px; */
   height: 20px;
 }
 
@@ -160,84 +160,84 @@ img {
 
 #outputApetureHeight {
   position: absolute;
-  top: 17.5%;
-  left: 3%;
+  top: 37%;
+  left: 2.7%;
 }
 
 #outputApetureWidth {
   position: absolute;
-  top: 34%;
-  left: 22.7%;
+  top: 62.5%;
+  left: 22.6%;
 }
 
 #dimensionA1 {
   position: absolute;
-  top: 24%;
-  left: 3%;
+  top: 49%;
+  left: 2.7%;
 }
 
 #dimensionA2 {
   position: absolute;
-  top: 11%;
-  left: 3%;
+  top: 24%;
+  left: 2.7%;
 }
 
 #dimensionA3 {
   position: absolute;
-  top: 5.5%;
-  left: 10%;
+  top: 11%;
+  left: 10.5%;
 }
 
 #dimensionWcT {
   position: absolute;
-  top: 38%;
-  left: 22.7%;
+  top: 68.5%;
+  left: 22.6%;
 }
 
 #dimensionThk_RHS {
   position: absolute;
-  top: 40%;
-  left: 80%;
+  top: 75%;
+  left: 78.5%;
 }
 
 #dimensionThk_LHS {
   position: absolute;
-  top: 40%;
-  left: 55%;
+  top: 75%;
+  left: 59.5%;
 }
 
 #dimensionZ {
   position: absolute;
-  top: 50%;
+  top: 75%;
   left: 69%;
 }
 
 #dimensionZcT {
   position: absolute;
-  top: 42%;
+  top: 70%;
   left: 69%;
 }
 
 #dimensionMFZ_LHS {
   position: absolute;
-  top: 10%;
-  left: 60%;
+  top: 11%;
+  left: 59.6%;
 }
 
 #dimensionMFZ_RHS {
   position: absolute;
-  top: 10%;
-  left: 80%;
+  top: 11%;
+  left: 78.5%;
 }
 
 #dimensionDMFZ_LHS {
   position: absolute;
-  top: 7%;
-  left: 60%;
+  top: 5%;
+  left: 59%;
 }
 
 #dimensionDMFZ_RHS {
   position: absolute;
-  top: 7%;
-  left: 80%;
+  top: 5%;
+  left: 79.5%;
 }
