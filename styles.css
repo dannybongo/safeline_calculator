@@ -286,14 +286,14 @@ img {
 
 #lengthPlusModule {
   position: absolute;
-  top: 73.5%;
-  left: 27%;
+  top: 5%;
+  left: 30%;
 }
 
 #length {
   position: absolute;
-  top: 5%;
-  left: 30%;
+  top: 73.5%;
+  left: 27%;
 }
 
 #height {
