@@ -1,7 +1,7 @@
 
 //querySelector and function for opening a new window from home page
 
-let buttons = document.querySelectorAll(".linkBtn");
+const buttons = document.querySelectorAll(".linkBtn");
 
 function openNewWindow(url) {
   window.open(url, "_blank");
@@ -14,18 +14,18 @@ buttons.forEach(button => {
   });
 });
 
-let calculateBtn = document.getElementById("calculateBtn");
+const calculateBtn = document.getElementById("calculateBtn");
 calculateBtn.addEventListener("click", calculate);
 
 function calculate() {
-  let inputApetureWidth = parseInt(document.getElementById("inputApetureWidth").value);
-  let inputApetureHeight = parseInt(document.getElementById("inputApetureHeight").value);
-  let apetureMin = Math.min(inputApetureWidth, inputApetureHeight);
-  let caseMaterialSelect = document.getElementById("caseMaterial");
-  let caseDutyType = document.getElementById("caseDutyType");
-  let detectorTypeSelect = document.getElementById("detectorType");
+  const inputApetureWidth = parseInt(document.getElementById("inputApetureWidth").value);
+  const inputApetureHeight = parseInt(document.getElementById("inputApetureHeight").value);
+  const apetureMin = Math.min(inputApetureHeight, inputApetureWidth);
+  const caseMaterialSelect = document.getElementById("caseMaterial");
+  const caseDutyType = document.getElementById("caseDutyType");
+  const detectorTypeSelect = document.getElementById("detectorType");
 
-  let array = [];
+  const array = [];
   for (let i = 50; i <= 1000; i += 25) {
     array.push(i)
   }
@@ -80,9 +80,12 @@ function calculate() {
 
   function signatureTouchCalc(inputApetureWidth, inputApetureHeight, apetureMin, caseMaterialSelect) {
     signatureTouchDimACalc(inputApetureWidth, inputApetureHeight);
+    signatureTouchDimMFZCalc(apetureMin);
     signatureTouchDimZCalc(apetureMin, caseMaterialSelect);
     signatureTouchDimZcTCalc(apetureMin, caseMaterialSelect);
-    signatureTouchDimMFZCalc(inputApetureWidth, inputApetureHeight);
+    signatureTouchLengthCalc(inputApetureWidth, dimensionA);
+    signatureTouchHeightCalc(inputApetureHeight, dimensionA);
+    signatureTouchWeightCalc(inputApetureWidth, inputApetureHeight, dimensionA, dimensionZ, caseMaterialSelect);
 
     function signatureTouchDimACalc(inputApetureWidth, inputApetureHeight) {
       if (inputApetureHeight === 50 && inputApetureWidth >= 100 && inputApetureWidth <= 1000) {
@@ -94,6 +97,7 @@ function calculate() {
       } else if (inputApetureHeight >= 50 && inputApetureWidth >= 1025 && inputApetureWidth <= 1500) {
         dimensionA = 145
       } else if (inputApetureHeight >= 50 && inputApetureWidth >= 1525 && inputApetureWidth <= 2000) {
+
         dimensionA = 155
       } else if (inputApetureHeight >= 50 && inputApetureWidth >= 2025 && inputApetureWidth <= 2500) {
         dimensionA = 165
@@ -105,22 +109,14 @@ function calculate() {
       document.getElementById("dimensionA2").value = dimensionA
       document.getElementById("dimensionA3").value = dimensionA
 
-      signatureTouchLengthCalc(inputApetureWidth, dimensionA);
-      signatureTouchHeightCalc(inputApetureHeight, dimensionA);
-
-      function signatureTouchLengthCalc(inputApetureWidth, dimensionA) {
-        let length = (2 * dimensionA) + inputApetureWidth + 172 - 6 - 6 //Ask tom where this comes from. Was it writtern as 172-6-6
-        let lengthPlusModule = length + 88
-        let lengthFrontToApeture = length - inputApetureWidth - dimensionA
-
-        document.getElementById("length").value = length
-        document.getElementById("lengthPlusModule").value = lengthPlusModule
-        document.getElementById("lengthFrontToApeture").value = lengthFrontToApeture
-      }
-      function signatureTouchHeightCalc(inputApetureHeight, dimensionA) {
-        let height = dimensionA + dimensionA + inputApetureHeight
-        document.getElementById("height").value = height
-      }
+    }
+    function signatureTouchDimMFZCalc(apetureMin) {
+      let MFZ = apetureMin * 1.5
+      let DMFZ = apetureMin * 2
+      document.getElementById("dimensionMFZ_LHS").value = MFZ
+      document.getElementById("dimensionMFZ_RHS").value = MFZ
+      document.getElementById("dimensionDMFZ_LHS").value = DMFZ
+      document.getElementById("dimensionDMFZ_RHS").value = DMFZ
     }
     function signatureTouchDimZCalc(apetureMin, caseMaterialSelect) {
       if (caseMaterialSelect.value === "stainlessSteel") {
@@ -128,7 +124,7 @@ function calculate() {
         if (dimensionZ <= 275){
           dimensionZ = 275
         }
-      } else if (caseMaterialSelect.value === "paintedAluminium") {
+      } else {
         dimensionZ = apetureMin / 2 + 169
         if (dimensionZ <= 281){
           dimensionZ = 281
@@ -140,7 +136,7 @@ function calculate() {
     }
     function signatureTouchDimZcTCalc(apetureMin) {
       dimensionZcT = apetureMin / 2 + 125
-
+  
       if (dimensionZcT <= 237){
         dimensionZcT = 237
       }
@@ -148,69 +144,50 @@ function calculate() {
       document.getElementById("dimensionZ2_LHS").value = dimensionZcT / 2;
       document.getElementById("dimensionZ2_RHS").value = dimensionZcT / 2;
     }
-    function signatureTouchDimMFZCalc(apetureMin) {
-      let MFZ = apetureMin * 1.5
-      let DMFZ = apetureMin * 2
-      document.getElementById("dimensionMFZ_LHS").value = MFZ
-      document.getElementById("dimensionMFZ_RHS").value = MFZ
-      document.getElementById("dimensionDMFZ_LHS").value = DMFZ
-      document.getElementById("dimensionDMFZ_RHS").value = DMFZ
+    function signatureTouchLengthCalc(inputApetureWidth, dimensionA) {
+      const length = (2 * dimensionA) + inputApetureWidth + 172 - 6 - 6 //Ask tom where this comes from. Why was it written as 172-6-6
+      const lengthPlusModule = length + 88
+      const lengthFrontToApeture = length - inputApetureWidth - dimensionA
+
+      document.getElementById("length").value = length
+      document.getElementById("lengthPlusModule").value = lengthPlusModule
+      document.getElementById("lengthFrontToApeture").value = lengthFrontToApeture
     }
+    function signatureTouchHeightCalc(inputApetureHeight, dimensionA) {
+      let height = dimensionA + dimensionA + inputApetureHeight
+      document.getElementById("height").value = height
+    }
+    function signatureTouchWeightCalc(inputApetureWidth, inputApetureHeight, dimensionA, dimensionZ, caseMaterialSelect) {
 
-    signatureTouchWeightCalc(inputApetureWidth, inputApetureHeight, dimensionA, dimensionZ, length, caseMaterialSelect);
-
-    function signatureTouchWeightCalc(inputApetureWidth, inputApetureHeight, dimensionA, dimensionZ, length, caseMaterialSelect) {
-
-     pottingCrossSectionalAreaValue1 = (dimensionA + inputApetureWidth + dimensionA) * dimensionA
-     pottingCrossSectionalAreaValue2 = inputApetureHeight * dimensionA
-     pottingCrossSectionalArea = (pottingCrossSectionalAreaValue1 + pottingCrossSectionalAreaValue2) * 2
-     pottingCrossSectionalVolume = pottingCrossSectionalArea * (dimensionZ - 6 - 6)
-     sandAndResinDensity = 0.0016 //Unit Of Measure g/mm^
-     pottingWeight = (pottingCrossSectionalVolume * sandAndResinDensity)/1000 //Unit of Measure KG
-
-     caseSideArea = length * (inputApetureHeight + dimensionA + dimensionA)
-     caseFrontArea = dimensionZ * (inputApetureHeight + dimensionA + dimensionA)
-     caseTopArea = length * dimensionZ
-     caseOverallArea = (caseFrontArea * caseSideArea * caseTopArea) * 2
-     stainlessDensity = 0.008 //Unit of measure g/mm^3
-     aluminiumDensity = 0.0027 //Unit of measure g/mm^3
-     stainlessSteelCaseWeight = stainlessDensity * caseOverallArea
-     PaintedAluminiumCaseWeight = aluminiumDensity * caseOverallArea
-
-     console.log("dimensionA " + dimensionA)
-     console.log("dimensionZ " + dimensionZ)
-     console.log("inputApetureWidth " + inputApetureWidth)
-     console.log("inputApetureHeight " + inputApetureHeight)
-     console.log("length " + length)
+    const length2 = (2 * dimensionA) + inputApetureWidth + 172 - 6 - 6 
+    //the variable 'length' should passed through 'signatureTouchWeightCalc'. I kept getting 0 for an answear.  'length2' is a work-around but not the solution. Will investigate later.
       
-     console.log("pottingCrossSectionalAreaValue1 " + pottingCrossSectionalAreaValue1)
-     console.log("pottingCrossSectionalAreaValue2 " +  pottingCrossSectionalAreaValue2)
-     console.log("pottingCrossSectionalArea " + pottingCrossSectionalArea)
-     console.log("pottingCrossSectionalVolume " + pottingCrossSectionalVolume)
-     console.log("pottingWeight " + pottingWeight)
+      pottingCrossSectionalAreaValue1 = (dimensionA + inputApetureWidth + dimensionA) * dimensionA
+      pottingCrossSectionalAreaValue2 = inputApetureHeight * dimensionA
+      pottingCrossSectionalArea = (pottingCrossSectionalAreaValue1 + pottingCrossSectionalAreaValue2) * 2
+      pottingCrossSectionalVolume = pottingCrossSectionalArea * (dimensionZ - 6 - 6)
+      sandAndResinDensity = 0.0016 //Unit Of Measure g/mm^
+      pottingWeight = (pottingCrossSectionalVolume * sandAndResinDensity)/1000 //Unit of Measure KG
 
-     console.log("caseSideArea " + caseSideArea)
-     console.log("caseFrontArea " + caseFrontArea)
-     console.log("caseTopArea " + caseTopArea)
-     console.log("caseOverallArea " + caseOverallArea)
-     console.log("stainlessSteelCaseWeight " + stainlessSteelCaseWeight)
-     console.log("PaintedAluminiumCaseWeight " + PaintedAluminiumCaseWeight)
-
-     if (caseMaterialSelect === "stainlessSteel"){
-     stainlessSteelOverallWeight = stainlessSteelCaseWeight + pottingWeight
-     document.getElementById("weight").value = stainlessSteelOverallWeight
-     console.log("SS " + stainlessSteelOverallWeight)
-     } else {
+      caseSideArea = length2 * (inputApetureHeight + dimensionA + dimensionA)
+      caseFrontArea = dimensionZ * (inputApetureHeight + dimensionA + dimensionA)
+      caseTopArea = length2 * dimensionZ
+      caseOverallArea = (caseFrontArea + caseSideArea + caseTopArea) * 2
+      caseOverallVolumeStainlessSteel = caseOverallArea * 3
+      caseOverallVolumePaintedAluminium = caseOverallArea * 6
+      stainlessDensity = 0.008 //Unit of measure g/mm^3
+      aluminiumDensity = 0.0027 //Unit of measure g/mm^3
+      stainlessSteelCaseWeight = (stainlessDensity * caseOverallVolumeStainlessSteel)/1000
+      PaintedAluminiumCaseWeight = (aluminiumDensity * caseOverallVolumePaintedAluminium)/1000
+      stainlessSteelOverallWeight = stainlessSteelCaseWeight + pottingWeight
       PaintedAluminiumOverallWeight = PaintedAluminiumCaseWeight + pottingWeight
-      document.getElementById("weight").value = PaintedAluminiumCaseWeight
-      console.log("PA " + PaintedAluminiumOverallWeight)
-     }
-
-     //need to understand pottingCrossSectionalValue calculations
-     //why is the case volume for aluminium * 6?
-     //The same formula is used for the RZ, but not sure how to use the variables in both calcs
+      
+      if (caseMaterialSelect.value === "stainlessSteel"){
+      document.getElementById("weight").value = math.round(stainlessSteelOverallWeight)
+      } else {
+        document.getElementById("weight").value = math.round(PaintedAluminiumOverallWeight)
+      }
     }
-
 
   }
 
@@ -339,10 +316,21 @@ lessons learnt
 
 It clicked nesting functions within functions and using variables within the nested functions by initialising them in the top level function and passing them down to the lower functions
 
-
+There’s basically two places where you need to declare what variables your passing through the function.  I had not done this in both places. Simple user error
+I feel like explaining the problem to a person helped me fix it. With bugs now, I have a checklist > check for typos, check for alignment between variables being called up, console log at each stage to pinpoint the issue is
 
 Improvements
 
 Dont use buttons for naviagtion, only for performing actions
 Review the HTML, should only be using 1 H1 tag per page - Review semantic HTML practices
+change to 'const' variable whwre possible!
+unit tests for verifying data
+the variable 'length' should passed through 'signatureTouchWeightCalc'. I kept getting 0 for an answear.  'length2' is a work-around but not the solution. Will investigate later.
+correct any else if statements. if statments should end with 'else'
+
+     //need to understand pottingCrossSectionalValue calculations
+     //why is the case volume for aluminium * 6?
+     //The same formula is used for the RZ, but not sure how to use the variables in both calcs
+
+     
 */
