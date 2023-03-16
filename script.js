@@ -1,18 +1,18 @@
 
 //querySelector and function for opening a new window from home page
 
-const buttons = document.querySelectorAll(".linkBtn");
+// const buttons = document.querySelectorAll(".linkBtn");
 
-function openNewWindow(url) {
-  window.open(url, "_blank");
-}
+// function openNewWindow(url) {
+//   window.open(url, "_blank");
+// }
 
-buttons.forEach(button => {
-  button.addEventListener("click", function () {
-    const url = this.getAttribute("data-url");
-    openNewWindow(url);
-  });
-});
+// buttons.forEach(button => {
+//   button.addEventListener("click", function () {
+//     const url = this.getAttribute("data-url");
+//     openNewWindow(url);
+//   });
+// });
 
 const calculateBtn = document.getElementById("calculateBtn");
 calculateBtn.addEventListener("click", calculate);
@@ -25,9 +25,35 @@ function calculate() {
   const caseDutyType = document.getElementById("caseDutyType");
   const detectorTypeSelect = document.getElementById("detectorType");
 
-  const array = [];
-  for (let i = 50; i <= 1000; i += 25) {
-    array.push(i)
+
+  //validation to ensure the user has typed/selected viable inputs.
+  if (detectorTypeSelect.value === ""){
+    alert("Please populate the detector type box.")
+    return
+  }
+  if (caseMaterialSelect.value === ""){
+    alert("Please populate the case material box.")
+    return
+  }
+  if (caseDutyType.value ===""){
+    alert("Please populate the case type box.")
+    return
+  }
+  if (inputApetureWidth % 25 !== 0 || (inputApetureWidth % 10 !== 0 && inputApetureWidth % 10 !== 5)) {
+    alert("Aperture width and height must be an increment of 25, e.g. 200W x 325H");
+    return
+  }
+  if (inputApetureHeight % 25 !== 0 || (inputApetureHeight % 10 !== 0 && inputApetureHeight % 10 !== 5)) {
+    alert("Aperture width and height must be an increment of 25, e.g. 200W x 325H");
+    return
+  }
+  if (inputApetureWidth > 3000 || inputApetureWidth < 100){
+    alert("Detector apeture Width outside of available product range. We can offer a width between the range of 100-3000. Please check and re-run the calculator.")
+    return
+  }
+  if (inputApetureHeight > 1000 || inputApetureHeight < 100){
+    alert("Detector apeture height outside of available product range. We can offer a width between the range of 100-1000. Please check and re-run the calculator.")
+    return
   }
 
   document.getElementById("outputApetureWidth").value = inputApetureWidth;
@@ -36,10 +62,18 @@ function calculate() {
   document.getElementById("dimension100_LHS").value = 100;
   document.getElementById("dimension88").value = 88;
 
+
+
+  const array = [];
+  for (let i = 50; i <= 1000; i += 25) {
+    array.push(i)
+  }
+
   //The Sig-Touch & Sig-Touch RZ share the 3 below calculated dimensions in common
   signatureTouchDimWcTCalc(inputApetureWidth);
   signatureTouchThkCalc(caseDutyType, caseMaterialSelect);
   signatureTouchCableDimCalc(caseMaterialSelect);
+  detectorInfoTooltip(detectorTypeSelect);
 
   function signatureTouchDimWcTCalc(inputApetureWidth) {
     let dimensionWcT = inputApetureWidth + 200
@@ -71,12 +105,28 @@ function calculate() {
       document.getElementById("cableDim").value = 125;
     }
   }
+  function detectorInfoTooltip(detectorTypeSelect){
+
+    if (detectorTypeSelect.value === "signatureTouch"){
+      let information = "Signature Touch metal detectors are suitable for the inspection of multiple products with different product signals without the need for adjustment or programme changes. In addition, the Signature Touch offers automatic product clustering, allowing numerous products to be inspected on one common setting."
+      document.getElementById("detectorInfoOutput").value = information;
+    } else {
+      information = "Inspection of multiple products with different product signals without the need for adjustment or programme changes. In addition, the Signature Touch offers automatic product clustering, allowing numerous products to be inspected on one common setting. The revolutionary 'Zero Metal Free Zone' (ZMFZ) technology allows the detector to be installed in close proximity to other metal structures and equipment."
+      document.getElementById("detectorInfoOutput").innerHTML = information;
+    }
+    }
+
 
   if (detectorTypeSelect.value === "signatureTouch") {
-    signatureTouchCalc(inputApetureWidth, inputApetureHeight, apetureMin, caseMaterialSelect)
+    signatureTouchCalc(inputApetureWidth, inputApetureHeight, apetureMin, caseMaterialSelect);
+    console.log("test sig touch");
+  } else if (detectorTypeSelect.value === "rzSignatureTouch") {
+    console.log("test RZ");
+    signatureTouchRZCalc(inputApetureWidth, inputApetureHeight, apetureMin, caseMaterialSelect, array);
   } else {
-    signatureTouchRZCalc(inputApetureWidth, inputApetureHeight, apetureMin, caseMaterialSelect, array)
+    console.log("select a detector type");
   }
+  
 
   function signatureTouchCalc(inputApetureWidth, inputApetureHeight, apetureMin, caseMaterialSelect) {
     signatureTouchDimACalc(inputApetureWidth, inputApetureHeight);
@@ -183,9 +233,9 @@ function calculate() {
       PaintedAluminiumOverallWeight = PaintedAluminiumCaseWeight + pottingWeight
       
       if (caseMaterialSelect.value === "stainlessSteel"){
-      document.getElementById("weight").value = math.round(stainlessSteelOverallWeight)
+        document.getElementById("weight").value = Math.round(stainlessSteelOverallWeight);
       } else {
-        document.getElementById("weight").value = math.round(PaintedAluminiumOverallWeight)
+        document.getElementById("weight").value = Math.round(PaintedAluminiumOverallWeight);
       }
     }
 
@@ -249,7 +299,6 @@ function calculate() {
       signatureTouchRZ_DimZ_PA_Calc(inputApetureHeight, inputApetureWidth, array);
       signatureTouchRZ_DimZcT_PA_Calc(inputApetureHeight, inputApetureWidth, array);
     }
-
     function signatureTouchRZ_DimZ_SS_Calc(inputApetureHeight, inputApetureWidth, array) {
 
       let index = array.indexOf(inputApetureHeight); //if the apeture height is in the array, return the index of the value in the array
@@ -311,6 +360,7 @@ function calculate() {
   }
 }
 
+
 /*
 lessons learnt
 
@@ -331,6 +381,21 @@ correct any else if statements. if statments should end with 'else'
      //need to understand pottingCrossSectionalValue calculations
      //why is the case volume for aluminium * 6?
      //The same formula is used for the RZ, but not sure how to use the variables in both calcs
+     //Need infomation from Tom on the RZ Al Oversquare figures.
 
-     
+
+
+
+to do list     
+
+
+Program buttons:
+
+reset
+req dwg
+print pdf
+homepage
+
+tidy information button up
+verify calcs. unit testing?
 */

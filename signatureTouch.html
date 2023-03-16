@@ -9,39 +9,11 @@
   </head>
   <body>
     <div class="container1">
-      <h1>Mettler Toledo</h1>
-      <h2>Signature Touch</h2>
+      <div id="headings">
+        <h1>Mettler Toledo</h1>
+        <h2>Signature Touch</h2>
+      </div>
       <div class="container2">
-        <div class="container3LHS">
-          <img
-            src="images/signatureTouch.jpg"
-            alt="Signature Touch Metal Detector"
-          />
-          <output type="text" id="outputApetureHeight"></output>
-          <output type="text" id="outputApetureWidth"></output>
-          <output type="text" id="dimensionA1"></output>
-          <output type="text" id="dimensionA2"></output>
-          <output type="text" id="dimensionA3"></output>
-          <output type="text" id="dimensionZ2_LHS"></output>
-          <output type="text" id="dimensionZ2_RHS"></output>
-          <output type="text" id="dimensionZ"></output>
-          <output type="text" id="dimensionZcT"></output>
-          <output type="text" id="dimensionWcT"></output>
-          <output type="text" id="dimensionThk_LHS"></output>
-          <output type="text" id="dimensionThk_RHS"></output>
-          <output type="text" id="dimensionMFZ_LHS"></output>
-          <output type="text" id="dimensionMFZ_RHS"></output>
-          <output type="text" id="dimensionDMFZ_LHS"></output>
-          <output type="text" id="dimensionDMFZ_RHS"></output>
-          <output type="text" id="dimension88"></output>
-          <output type="text" id="dimension100_LHS"></output>
-          <output type="text" id="dimension100_RHS"></output>
-          <output type="text" id="cableDim"></output>
-          <output type="text" id="lengthFrontToApeture"></output>
-          <output type="text" id="length"></output>
-          <output type="text" id="lengthPlusModule"></output>
-          <output type="text" id="height"></output>
-        </div>
         <div class="container3RHS">
           <h2>Inputs</h2>
           <form action="" method="GET">
@@ -92,24 +64,54 @@
             <div class="buttons">
               <button type="button" id="calculateBtn">Calculate</button>
               <button class="resetButton">Reset</button>
-              <h2>Output</h2>
             </div>
+            <h2>Output</h2>
             <div class="formDiv">
               <label for="Weight">Approx' Weight (Kg):</label>
               <output type="text" id="weight"></output>
             </div>
-            <div class="formDiv">
-              <label for="detectorInfo" class="labelDetInfo"
+            <div id="DetectorInfoContainer">
+              <label for="detectorInfo" id="labelDetInfo"
                 >Detector Information:</label
               >
-              <output type="text" class="outputDetInfo"></output>
+              <output type="text" id="detectorInfoOutput"></output>
             </div>
-            <div class="buttons">
+            <div class="buttons2">
               <button>Request Drawing</button>
               <button>Print PDF</button>
               <button>Homepage</button>
             </div>
           </form>
+        </div>
+        <div class="container3LHS">
+          <img
+            src="images/signatureTouch.jpg"
+            alt="Signature Touch Metal Detector"
+          />
+          <output type="text" id="outputApetureHeight"></output>
+          <output type="text" id="outputApetureWidth"></output>
+          <output type="text" id="dimensionA1"></output>
+          <output type="text" id="dimensionA2"></output>
+          <output type="text" id="dimensionA3"></output>
+          <output type="text" id="dimensionZ2_LHS"></output>
+          <output type="text" id="dimensionZ2_RHS"></output>
+          <output type="text" id="dimensionZ"></output>
+          <output type="text" id="dimensionZcT"></output>
+          <output type="text" id="dimensionWcT"></output>
+          <output type="text" id="dimensionThk_LHS"></output>
+          <output type="text" id="dimensionThk_RHS"></output>
+          <output type="text" id="dimensionMFZ_LHS"></output>
+          <output type="text" id="dimensionMFZ_RHS"></output>
+          <output type="text" id="dimensionDMFZ_LHS"></output>
+          <output type="text" id="dimensionDMFZ_RHS"></output>
+          <output type="text" id="dimension88"></output>
+          <output type="text" id="dimension100_LHS"></output>
+          <output type="text" id="dimension100_RHS"></output>
+          <output type="text" id="cableDim"></output>
+          <output type="text" id="lengthFrontToApeture"></output>
+          <output type="text" id="length"></output>
+          <output type="text" id="lengthPlusModule"></output>
+          <output type="text" id="height"></output>
         </div>
       </div>
     </div>

@@ -5,12 +5,17 @@
   box-sizing: border-box;
   font-family: monospace, sans-serif;
   color: black;
-
-  /* outline: auto;
+  /* 
+  outline: auto;
   outline-color: red; */
 }
 
 /*--------------------------------------------- Main Container Styles --------------------------------------------- */
+#headings {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
 
 .container1 {
   text-align: center;
@@ -21,7 +26,7 @@
   left: 50%;
   transform: translate(-50%, -50%); */
   padding: 20px;
-  margin: 50px;
+  margin: 10px;
 }
 
 .container2 {
@@ -107,6 +112,13 @@ form {
 .formDiv2 {
   display: flex;
   text-align: justify;
+  flex-direction: column;
+}
+
+#weight {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  color: #022073;
 }
 
 option {
@@ -136,6 +148,25 @@ output {
   height: 20px;
 }
 
+#DetectorInfoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#detectorInfoOutput {
+  margin-bottom: 10px;
+  width: 350px;
+  margin-left: auto;
+  height: 115px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  color: #022073;
+  font-size: 11px;
+  text-align: left;
+  padding: 5px;
+}
+
 .labelDetInfo {
   text-align: left;
 }
@@ -146,12 +177,25 @@ output {
 
 .buttons {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  align-items: flex-end;
+  flex-direction: row;
   margin-top: 10px;
+  justify-content: center;
+  gap: 10px;
 }
 
+#info-tooltip-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* #info-tooltip-text:hover {
+  transition: 0.3s;
+} */
+
+/*-------- Image & output positions---------*/
 img {
   width: 900px;
   height: 450px;
