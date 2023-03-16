@@ -17,6 +17,27 @@
   justify-content: center;
 }
 
+.drawingRequest {
+  width: 400px;
+  text-align: center;
+  background-color: white;
+  border: 3px solid #022073;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  margin: 10px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.sendDrawingRequestBtn {
+  margin-top: 10px;
+}
+
 .container1 {
   text-align: center;
   border: 3px solid #022073;

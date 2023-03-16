@@ -1,21 +1,11 @@
-
-//querySelector and function for opening a new window from home page
-
-// const buttons = document.querySelectorAll(".linkBtn");
-
-// function openNewWindow(url) {
-//   window.open(url, "_blank");
-// }
-
-// buttons.forEach(button => {
-//   button.addEventListener("click", function () {
-//     const url = this.getAttribute("data-url");
-//     openNewWindow(url);
-//   });
-// });
-
 const calculateBtn = document.getElementById("calculateBtn");
 calculateBtn.addEventListener("click", calculate);
+
+const resetBtn = document.getElementById("resetBtn");
+resetBtn.addEventListener("click", reset);
+
+const returnHomeBtn = document.getElementById("homeBtn")
+returnHomeBtn.addEventListener("click", returnHome);
 
 function calculate() {
   const inputApetureWidth = parseInt(document.getElementById("inputApetureWidth").value);
@@ -359,7 +349,12 @@ function calculate() {
     }
   }
 }
-
+function reset(){
+  location.reload();
+}
+function returnHome(){
+  window.location.href="../index.html"
+}
 
 /*
 lessons learnt

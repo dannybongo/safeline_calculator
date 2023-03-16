@@ -63,7 +63,7 @@
             </div>
             <div class="buttons">
               <button type="button" id="calculateBtn">Calculate</button>
-              <button class="resetButton">Reset</button>
+              <button type="button" id="resetBtn">Reset</button>
             </div>
             <h2>Output</h2>
             <div class="formDiv">
@@ -79,7 +79,9 @@
             <div class="buttons2">
               <button>Request Drawing</button>
               <button>Print PDF</button>
-              <button>Homepage</button>
+              <button type="button" id="homeBtn" data-url="index.html">
+                Homepage
+              </button>
             </div>
           </form>
         </div>
@@ -114,7 +116,71 @@
           <output type="text" id="height"></output>
         </div>
       </div>
+      <form class="drawingRequest">
+        <div class="formDiv">
+          <label>Drawing Number:</label>
+          <input
+            type="text"
+            id="drawingNumber"
+            name="drawingNumber"
+            placeholder="Drawing Number"
+            required
+          />
+        </div>
+        <div class="formDiv">
+          <label>Requested By:</label>
+          <input
+            type="text"
+            id="requestedBy"
+            name="requestedBy"
+            placeholder="Name"
+            required
+          />
+        </div>
+        <div class="formDiv">
+          <label>Drawing Recipient:</label>
+          <input
+            type="text"
+            id="drawingRecipient"
+            name="drawingRecipient"
+            placeholder="Name"
+            required
+          />
+        </div>
+        <div class="formDiv">
+          <label>PDF Required:</label>
+          <input type="checkbox" id="pdfRequired" name="pdfRequired" />
+        </div>
+        <div class="formDiv">
+          <label>DWG Required:</label>
+          <input type="checkbox" id="dwgRequired" name="pdfRequired" />
+        </div>
+        <div class="formDiv">
+          <label>DFX Required:</label>
+          <input type="checkbox" id="dfxRequired" name="pdfRequired" />
+        </div>
+        <div class="formDiv">
+          <label>STEP Required:</label>
+          <input type="checkbox" id="stepRequired" name="pdfRequired" />
+        </div>
+        <div class="formDiv">
+          <label>Additional Notes:</label>
+          <input
+            type="text"
+            id="drawingRecipient"
+            name="drawingRecipient"
+            placeholder=""
+          />
+        </div>
+        <button
+          type="button"
+          id="sendDrawingRequestBtn"
+          class="sendDrawingRequestBtn"
+        >
+          Send Drawing Request
+        </button>
+      </form>
     </div>
-    <script src="script.js"></script>
+    <script src="signatureTouch.js"></script>
   </body>
 </html>
