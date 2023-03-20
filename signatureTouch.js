@@ -1,12 +1,6 @@
 const calculateBtn = document.getElementById("calculateBtn");
 calculateBtn.addEventListener("click", calculate);
 
-const resetBtn = document.getElementById("resetBtn");
-resetBtn.addEventListener("click", reset);
-
-const returnHomeBtn = document.getElementById("homeBtn")
-returnHomeBtn.addEventListener("click", returnHome);
-
 function calculate() {
   const inputApetureWidth = parseInt(document.getElementById("inputApetureWidth").value);
   const inputApetureHeight = parseInt(document.getElementById("inputApetureHeight").value);
@@ -349,15 +343,96 @@ function calculate() {
     }
   }
 }
+
+const resetBtn = document.getElementById("resetBtn");
+resetBtn.addEventListener("click", reset);
+
 function reset(){
   location.reload();
 }
+
+const returnHomeBtn = document.getElementById("homeBtn");
+returnHomeBtn.addEventListener("click", returnHome);
+
 function returnHome(){
   window.location.href="../index.html"
 }
 
+const openDrawingRequestBtn = document.getElementById("requestDrawingBtn");
+openDrawingRequestBtn.addEventListener("click", openDrawingRequest);
+
+function openDrawingRequest(){
+  document.getElementById("drawingRequestForm").style.display = "flex";
+}
+
+const returnBtn = document.getElementById("returnBtn");
+returnBtn.addEventListener("click", returnPage);
+
+function returnPage(){
+  document.getElementById("drawingRequestForm").style.display = "none";
+}
+
+const sendDrawingRequestBtn = document.getElementById("sendDrawingRequestBtn");
+sendDrawingRequestBtn.addEventListener("click", sendDrawingRequest);
+
+
+function sendDrawingRequest(){
+  const drawingNumber = document.getElementById('drawingNumber').value;
+  const requestedBy = document.getElementById('requestedBy').value;
+  const drawingRecipient = document.getElementById('drawingRecipient').value;
+  const pdfRequired = document.getElementById('pdfRequired').checked;
+  const dwgRequired = document.getElementById('dwgRequired').checked;
+  const dfxRequired = document.getElementById('dfxRequired').checked;
+  const stepRequired = document.getElementById('stepRequired').checked;
+  const additionalNotes = document.getElementById('additionalNotes').value;
+
+  if (drawingNumber === "") {
+    alert("Please populate the 'drawing number' box")
+    return
+  }
+  if (requestedBy === "") {
+    alert("Please populate the 'requested by' box")
+    return
+  }
+  if (drawingRecipient === "") {
+    alert("Please populate 'drawing recipient' box")
+    return
+  }
+
+  const emailTemplate = 
+  
+  `Hi,
+  
+  I would like to request a drawing with the following details:
+
+  Drawing Number: ${drawingNumber}
+  Requested By: ${requestedBy}
+
+  PDF Required: ${pdfRequired}
+  DWG Required: ${dwgRequired}
+  DFX Required: ${dfxRequired}
+  STEP Required: ${stepRequired}
+
+  Additional Notes: ${additionalNotes}
+
+  Kind regards,
+  [Your Name]`;
+
+
+  const emailLink = `mailto:${"dan.eaton@mt.com"}?subject=${encodeURIComponent(`Drawing Request - ${drawingNumber}`)}&body=${encodeURIComponent(emailTemplate)}`;
+
+  // Open email client with populated email template
+  window.location.href = emailLink;
+}
+
+
+
+
+
 /*
 lessons learnt
+
+template interpolation
 
 It clicked nesting functions within functions and using variables within the nested functions by initialising them in the top level function and passing them down to the lower functions
 
@@ -377,7 +452,6 @@ correct any else if statements. if statments should end with 'else'
      //why is the case volume for aluminium * 6?
      //The same formula is used for the RZ, but not sure how to use the variables in both calcs
      //Need infomation from Tom on the RZ Al Oversquare figures.
-
 
 
 

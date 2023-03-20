@@ -1,58 +1,39 @@
 /*--------------------------------------------- Global Styles --------------------------------------------- */
 
 * {
-  margin: 0;
+  margin: 0px;
   box-sizing: border-box;
   font-family: monospace, sans-serif;
   color: black;
-  /* 
+
   outline: auto;
-  outline-color: red; */
+  outline-color: red;
 }
 
 /*--------------------------------------------- Main Container Styles --------------------------------------------- */
-#headings {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-.drawingRequest {
-  width: 400px;
-  text-align: center;
-  background-color: white;
-  border: 3px solid #022073;
-  border-radius: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  margin: 10px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-}
-
-.sendDrawingRequestBtn {
-  margin-top: 10px;
-}
 
 .container1 {
   text-align: center;
   border: 3px solid #022073;
   border-radius: 20px;
+  /* padding: 20px;
+  margin: 20px; */
+
   position: absolute;
-  /* top: 50%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); */
-  padding: 20px;
-  margin: 10px;
+  transform: translate(-50%, -50%);
 }
 
 .container2 {
   display: flex;
   justify-content: center;
+}
+
+@media screen and (max-width: 1570px) {
+  .container2 {
+    flex-direction: column;
+  }
 }
 
 .container3 {
@@ -61,9 +42,11 @@
   padding: 20px;
 }
 
-.container3.nonConveyors {
-  margin-left: 20px;
-  margin-right: 20px;
+.container3LHS {
+  border: 3px solid #99ad6a;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
 }
 
 .container3RHS {
@@ -71,15 +54,7 @@
   border-radius: 20px;
   padding: 20px;
   margin: 20px;
-}
-
-.container3LHS {
   position: relative;
-  display: inline-block;
-  border: 3px solid #99ad6a;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px;
 }
 
 h1 {
@@ -87,8 +62,6 @@ h1 {
 }
 
 h2 {
-  margin-top: 5px;
-  margin-bottom: 5px;
   color: #022073;
 }
 
@@ -106,7 +79,6 @@ button {
   color: #022073;
   background-color: #f0f0f0;
   padding: 5px 10px;
-  text-align: center;
   font-size: 16px;
   transition: background-color 0.8s ease;
   width: 190px;
@@ -127,7 +99,7 @@ form {
 .formDiv {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  align-items: center;
 }
 
 .formDiv2 {
@@ -164,8 +136,6 @@ output {
   margin-top: 10px;
   width: 160px;
   margin-left: auto;
-  /* border: 1px solid #757575;
-  border-radius: 2px; */
   height: 20px;
 }
 
@@ -199,10 +169,8 @@ output {
 .buttons {
   display: flex;
   align-items: flex-end;
-  flex-direction: row;
-  margin-top: 10px;
-  justify-content: center;
   gap: 10px;
+  margin-top: 10px;
 }
 
 #info-tooltip-container {
@@ -212,163 +180,175 @@ output {
   margin-bottom: 10px;
 }
 
-/* #info-tooltip-text:hover {
-  transition: 0.3s;
-} */
+/*--------------------------------------------- Output Positioning On Image --------------------------------------------- */
 
-/*-------- Image & output positions---------*/
 img {
-  width: 900px;
-  height: 450px;
-  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 #outputApetureHeight {
   position: absolute;
-  top: 37%;
-  left: 2.7%;
+  top: 47%;
+  left: 34.4%;
 }
 
 #outputApetureWidth {
   position: absolute;
-  top: 62.8%;
-  left: 22.6%;
-}
-
-#dimensionA1 {
-  position: absolute;
-  top: 49%;
-  left: 2.7%;
-}
-
-#dimensionA2 {
-  position: absolute;
-  top: 24%;
-  left: 2.7%;
-}
-
-#dimensionA3 {
-  position: absolute;
-  top: 11%;
-  left: 10.5%;
-}
-
-#dimensionWcT {
-  position: absolute;
-  top: 68.5%;
-  left: 22.6%;
-}
-
-#dimensionThk_RHS {
-  position: absolute;
-  top: 75%;
-  left: 78.5%;
-}
-
-#dimensionThk_LHS {
-  position: absolute;
-  top: 75%;
-  left: 59.5%;
-}
-
-#dimensionZ {
-  position: absolute;
-  top: 75%;
-  left: 69%;
-}
-
-#dimensionZcT {
-  position: absolute;
-  top: 70%;
-  left: 69%;
-}
-
-#dimensionMFZ_LHS {
-  position: absolute;
-  top: 11%;
-  left: 59.6%;
-}
-
-#dimensionMFZ_RHS {
-  position: absolute;
-  top: 11%;
-  left: 78.5%;
-}
-
-#dimensionDMFZ_LHS {
-  position: absolute;
-  top: 5%;
-  left: 59%;
-}
-
-#dimensionDMFZ_RHS {
-  position: absolute;
-  top: 5%;
-  left: 79.5%;
-}
-
-#dimensionZ2_LHS {
-  position: absolute;
-  top: 65%;
-  left: 66%;
-}
-
-#dimensionZ2_RHS {
-  position: absolute;
-  top: 65%;
-  left: 72%;
+  top: 66%;
+  left: 47.2%;
 }
 
 #dimension100_LHS {
   position: absolute;
-  top: 62.8%;
-  left: 11.3%;
+  top: 66%;
+  left: 40%;
 }
 
 #dimension100_RHS {
   position: absolute;
-  top: 62.8%;
-  left: 34%;
+  top: 66%;
+  left: 54.6%;
 }
 
-#dimension100_RHS {
+#dimensionWcT {
   position: absolute;
-  top: 62.8%;
-  left: 34%;
+  top: 70%;
+  left: 47.2%;
+}
+
+#dimensionA1 {
+  position: absolute;
+  top: 38%;
+  left: 34.4%;
+}
+
+#dimensionA2 {
+  position: absolute;
+  top: 55.5%;
+  left: 34.4%;
+}
+
+#dimensionA3 {
+  position: absolute;
+  top: 28%;
+  left: 39.4%;
+}
+
+#dimensionThk_RHS {
+  position: absolute;
+  top: 74.8%;
+  left: 83.5%;
+}
+
+#dimensionThk_LHS {
+  position: absolute;
+  top: 74.8%;
+  left: 71%;
+}
+
+#dimensionZ {
+  position: absolute;
+  top: 74.8%;
+  left: 77.2%;
+}
+
+#dimensionZcT {
+  position: absolute;
+  top: 71%;
+  left: 77.2%;
+}
+
+#dimensionMFZ_LHS {
+  position: absolute;
+  top: 28%;
+  left: 71%;
+}
+
+#dimensionMFZ_RHS {
+  position: absolute;
+  top: 28%;
+  left: 83.3%;
+}
+
+#dimensionDMFZ_LHS {
+  position: absolute;
+  top: 23.5%;
+  left: 70.6%;
+}
+
+#dimensionDMFZ_RHS {
+  position: absolute;
+  top: 23.5%;
+  left: 83.6%;
+}
+
+#dimensionZ2_LHS {
+  position: absolute;
+  top: 67.5%;
+  left: 75.2%;
+}
+
+#dimensionZ2_RHS {
+  position: absolute;
+  top: 67.5%;
+  left: 79%;
 }
 
 #dimension88 {
   position: absolute;
-  top: 11%;
-  left: 48.5%;
+  top: 28%;
+  left: 64.2%;
 }
 
 #cableDim {
   position: absolute;
-  top: 62.8%;
-  left: 43.5%;
+  top: 66%;
+  left: 60.5%;
 }
 
 #lengthPlusModule {
   position: absolute;
-  top: 5%;
-  left: 30%;
+  top: 23.5%;
+  left: 51%;
 }
 
 #length {
   position: absolute;
-  top: 73.5%;
-  left: 27%;
+  top: 74%;
+  left: 50%;
 }
 
 #height {
   position: absolute;
-  top: 37%;
-  right: 85%;
+  top: 47%;
+  right: 57.7%;
 }
 
 #lengthFrontToApeture {
   position: absolute;
-  top: 11%;
-  left: 39.5%;
+  top: 28%;
+  left: 58%;
+}
+
+/*--------------------------------------------- Drawing Request Styles --------------------------------------------- */
+.drawingRequestForm {
+  width: 460px;
+  text-align: center;
+  background-color: white;
+  border: 3px solid #022073;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  margin: 10px;
+  z-index: 1;
+  display: none;
+  align-items: center;
+}
+
+.sendDrawingRequestBtn {
+  margin-top: 10px;
 }

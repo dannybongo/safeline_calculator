@@ -9,12 +9,10 @@
   </head>
   <body>
     <div class="container1">
-      <div id="headings">
-        <h1>Mettler Toledo</h1>
-        <h2>Signature Touch</h2>
-      </div>
+      <h1>Mettler Toledo</h1>
+      <h2>Signature Touch</h2>
       <div class="container2">
-        <div class="container3RHS">
+        <div class="container3LHS">
           <h2>Inputs</h2>
           <form action="" method="GET">
             <div class="formDiv">
@@ -77,15 +75,17 @@
               <output type="text" id="detectorInfoOutput"></output>
             </div>
             <div class="buttons2">
-              <button>Request Drawing</button>
-              <button>Print PDF</button>
+              <button type="button" id="requestDrawingBtn">
+                Request Drawing
+              </button>
+              <button type="button" id="printBtn">Print PDF</button>
               <button type="button" id="homeBtn" data-url="index.html">
                 Homepage
               </button>
             </div>
           </form>
         </div>
-        <div class="container3LHS">
+        <div class="container3RHS">
           <img
             src="images/signatureTouch.jpg"
             alt="Signature Touch Metal Detector"
@@ -116,7 +116,8 @@
           <output type="text" id="height"></output>
         </div>
       </div>
-      <form class="drawingRequest">
+      <form class="drawingRequestForm" id="drawingRequestForm">
+        <h1>Drawing Request</h1>
         <div class="formDiv">
           <label>Drawing Number:</label>
           <input
@@ -167,18 +168,21 @@
           <label>Additional Notes:</label>
           <input
             type="text"
-            id="drawingRecipient"
-            name="drawingRecipient"
+            id="additionalNotes"
+            name="additionalNotes"
             placeholder=""
           />
         </div>
-        <button
-          type="button"
-          id="sendDrawingRequestBtn"
-          class="sendDrawingRequestBtn"
-        >
-          Send Drawing Request
-        </button>
+        <div class="buttons">
+          <button
+            type="button"
+            id="sendDrawingRequestBtn"
+            class="sendDrawingRequestBtn"
+          >
+            Send Request
+          </button>
+          <button type="button" id="returnBtn" class="returnBtn">Return</button>
+        </div>
       </form>
     </div>
     <script src="signatureTouch.js"></script>
