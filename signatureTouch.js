@@ -426,9 +426,6 @@ function sendDrawingRequest(){
 }
 
 
-
-
-
 /*
 lessons learnt
 

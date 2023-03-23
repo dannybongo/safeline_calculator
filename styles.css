@@ -6,34 +6,25 @@
   font-family: monospace, sans-serif;
   color: black;
 
-  outline: auto;
-  outline-color: red;
+  /* outline: auto;
+  outline-color: red; */
 }
 
 /*--------------------------------------------- Main Container Styles --------------------------------------------- */
 
 .container1 {
   text-align: center;
-  border: 3px solid #022073;
+  /* border: 3px solid #022073;
   border-radius: 20px;
-  /* padding: 20px;
-  margin: 20px; */
-
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%); */
+  margin-top: 20px;
 }
 
 .container2 {
   display: flex;
   justify-content: center;
-}
-
-@media screen and (max-width: 1570px) {
-  .container2 {
-    flex-direction: column;
-  }
 }
 
 .container3 {
@@ -47,6 +38,8 @@
   border-radius: 20px;
   padding: 20px;
   margin: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .container3RHS {
@@ -54,6 +47,13 @@
   border-radius: 20px;
   padding: 20px;
   margin: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container4RHS {
   position: relative;
 }
 
@@ -182,156 +182,152 @@ output {
 
 /*--------------------------------------------- Output Positioning On Image --------------------------------------------- */
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 #outputApetureHeight {
   position: absolute;
-  top: 47%;
-  left: 34.4%;
+  top: 41%;
+  left: 1%;
 }
 
 #outputApetureWidth {
   position: absolute;
-  top: 66%;
-  left: 47.2%;
+  top: 73%;
+  left: 35%;
 }
 
 #dimension100_LHS {
   position: absolute;
-  top: 66%;
-  left: 40%;
+  top: 73%;
+  left: 16%;
 }
 
 #dimension100_RHS {
   position: absolute;
-  top: 66%;
+  top: 73%;
   left: 54.6%;
 }
 
 #dimensionWcT {
   position: absolute;
-  top: 70%;
-  left: 47.2%;
+  top: 80.5%;
+  left: 35%;
 }
 
 #dimensionA1 {
   position: absolute;
-  top: 38%;
-  left: 34.4%;
+  top: 26%;
+  left: 1%;
 }
 
 #dimensionA2 {
   position: absolute;
   top: 55.5%;
-  left: 34.4%;
+  left: 1%;
 }
 
 #dimensionA3 {
   position: absolute;
-  top: 28%;
-  left: 39.4%;
+  top: 10%;
+  left: 15%;
 }
 
 #dimensionThk_RHS {
   position: absolute;
-  top: 74.8%;
-  left: 83.5%;
+  top: 88%;
+  left: 58%;
 }
 
 #dimensionThk_LHS {
   position: absolute;
-  top: 74.8%;
-  left: 71%;
+  top: 88%;
+  left: -2%;
 }
 
 #dimensionZ {
   position: absolute;
-  top: 74.8%;
-  left: 77.2%;
+  top: 88%;
+  left: 28%;
 }
 
 #dimensionZcT {
   position: absolute;
-  top: 71%;
-  left: 77.2%;
+  top: 82%;
+  left: 28%;
 }
 
 #dimensionMFZ_LHS {
   position: absolute;
-  top: 28%;
-  left: 71%;
+  top: 10%;
+  left: -4%;
 }
 
 #dimensionMFZ_RHS {
   position: absolute;
-  top: 28%;
-  left: 83.3%;
+  top: 10%;
+  left: 61%;
 }
 
 #dimensionDMFZ_LHS {
   position: absolute;
-  top: 23.5%;
-  left: 70.6%;
+  top: 3%;
+  left: -4%;
 }
 
 #dimensionDMFZ_RHS {
   position: absolute;
-  top: 23.5%;
-  left: 83.6%;
+  top: 3%;
+  left: 61%;
 }
 
 #dimensionZ2_LHS {
   position: absolute;
-  top: 67.5%;
-  left: 75.2%;
+  top: 76%;
+  left: 18%;
 }
 
 #dimensionZ2_RHS {
   position: absolute;
-  top: 67.5%;
-  left: 79%;
+  top: 76%;
+  left: 39%;
 }
 
 #dimension88 {
   position: absolute;
-  top: 28%;
-  left: 64.2%;
+  top: 10%;
+  left: 79.5%;
 }
 
 #cableDim {
   position: absolute;
-  top: 66%;
-  left: 60.5%;
+  top: 73%;
+  left: 70%;
 }
 
 #lengthPlusModule {
   position: absolute;
-  top: 23.5%;
-  left: 51%;
+  top: 3%;
+  left: 49%;
 }
 
 #length {
   position: absolute;
-  top: 74%;
-  left: 50%;
+  top: 86.5%;
+  left: 43%;
 }
 
 #height {
   position: absolute;
-  top: 47%;
-  right: 57.7%;
+  top: 41%;
+  left: -7%;
 }
 
 #lengthFrontToApeture {
   position: absolute;
-  top: 28%;
-  left: 58%;
+  top: 10%;
+  left: 65%;
 }
 
 /*--------------------------------------------- Drawing Request Styles --------------------------------------------- */
+
 .drawingRequestForm {
   width: 460px;
   text-align: center;
@@ -351,4 +347,95 @@ img {
 
 .sendDrawingRequestBtn {
   margin-top: 10px;
+}
+
+/*--------------------------------------------- Media Queries For Responsive a web-page --------------------------------------------- */
+
+@media screen and (max-width: 475px) {
+  .container3 {
+    border: none;
+  }
+  .container3LHS {
+    border: none;
+  }
+  .container3RHS {
+    border: none;
+  }
+  .container4RHS > * {
+    display: block;
+  }
+  #lengthPlusModule {
+    top: -1%;
+    left: 40%;
+  }
+  #dimension88 {
+    top: 6%;
+    left: 68%;
+  }
+  #lengthFrontToApeture {
+    top: 6%;
+    left: 53%;
+  }
+  #dimensionA3 {
+    top: 6%;
+    left: 3%;
+  }
+  #dimensionA2 {
+    top: 23%;
+    left: -9%;
+  }
+  #dimensionA1 {
+    top: 53%;
+    left: -9%;
+  }
+  #height {
+    top: 39%;
+    left: -18%;
+  }
+  #outputApetureHeight {
+    top: 39%;
+    left: -9%;
+  }
+  #length {
+    top: 83%;
+    left: 32%;
+  }
+  #dimensionWcT {
+    top: 77%;
+    left: 24%;
+  }
+  #dimension100_LHS {
+    top: 70%;
+    left: 5%;
+  }
+  #dimension100_RHS {
+    top: 70%;
+    left: 43%;
+  }
+  #outputApetureWidth {
+    top: 70%;
+    left: 24%;
+  }
+  #cableDim {
+    top: 70%;
+    left: 59%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .imgSideView {
+    width: 337px;
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  .container3RHS {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1570px) {
+  .container2 {
+    flex-direction: column;
+  }
 }
