@@ -14,12 +14,8 @@
 
 .container1 {
   text-align: center;
-  /* border: 3px solid #022073;
-  border-radius: 20px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%); */
-  margin-top: 20px;
+  margin-top: 10px;
+  /* position: absolute; */
 }
 
 .container2 {
@@ -34,10 +30,9 @@
 }
 
 .container3LHS {
-  border: 3px solid #99ad6a;
-  border-radius: 20px;
   padding: 20px;
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
 }
@@ -45,8 +40,7 @@
 .container3RHS {
   border: 3px solid #99ad6a;
   border-radius: 20px;
-  padding: 20px;
-  margin: 20px;
+  margin: 40px;
   position: relative;
   display: flex;
   align-items: center;
@@ -84,6 +78,10 @@ button {
   width: 190px;
 }
 
+img {
+  border-radius: 20px;
+}
+
 button:hover {
   cursor: pointer;
   background-color: #d9d9d9;
@@ -93,7 +91,10 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 350px;
+  width: 370px;
+  border: 3px solid #99ad6a;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 .formDiv {
@@ -130,14 +131,15 @@ input {
   margin-top: 10px;
   width: 160px;
   margin-left: auto;
+  text-align: center;
 }
 
-output {
+/* output {
   margin-top: 10px;
   width: 160px;
   margin-left: auto;
   height: 20px;
-}
+} */
 
 #DetectorInfoContainer {
   display: flex;
@@ -146,16 +148,14 @@ output {
 }
 
 #detectorInfoOutput {
+  margin-top: 10px;
   margin-bottom: 10px;
-  width: 350px;
-  margin-left: auto;
+  width: 344px;
   height: 115px;
   background-color: #f0f0f0;
-  border-radius: 5px;
   color: #022073;
   font-size: 11px;
   text-align: left;
-  padding: 5px;
 }
 
 .labelDetInfo {
@@ -180,169 +180,170 @@ output {
   margin-bottom: 10px;
 }
 
+#weight {
+  margin-top: 10px;
+  width: 160px;
+  margin-left: auto;
+}
+
 /*--------------------------------------------- Output Positioning On Image --------------------------------------------- */
 
 #outputApetureHeight {
   position: absolute;
-  top: 41%;
-  left: 1%;
+  top: 43%;
+  left: 12%;
 }
 
 #outputApetureWidth {
   position: absolute;
-  top: 73%;
-  left: 35%;
+  top: 75%;
+  left: 45.5%;
 }
 
 #dimension100_LHS {
   position: absolute;
-  top: 73%;
-  left: 16%;
+  top: 75%;
+  left: 26.5%;
 }
 
 #dimension100_RHS {
   position: absolute;
-  top: 73%;
-  left: 54.6%;
+  top: 75%;
+  left: 65%;
 }
 
 #dimensionWcT {
   position: absolute;
-  top: 80.5%;
-  left: 35%;
+  top: 82%;
+  left: 45.5%;
 }
 
 #dimensionA1 {
   position: absolute;
-  top: 26%;
-  left: 1%;
+  top: 28%;
+  left: 12%;
 }
 
 #dimensionA2 {
   position: absolute;
-  top: 55.5%;
-  left: 1%;
+  top: 58%;
+  left: 12%;
 }
 
 #dimensionA3 {
   position: absolute;
-  top: 10%;
-  left: 15%;
+  top: 12%;
+  left: 25%;
 }
 
 #dimensionThk_RHS {
   position: absolute;
-  top: 88%;
-  left: 58%;
+  top: 90%;
+  left: 78%;
 }
 
 #dimensionThk_LHS {
   position: absolute;
-  top: 88%;
-  left: -2%;
+  top: 90%;
+  left: 19%;
 }
 
 #dimensionZ {
   position: absolute;
-  top: 88%;
-  left: 28%;
+  top: 90%;
+  left: 48%;
 }
 
 #dimensionZcT {
   position: absolute;
-  top: 82%;
-  left: 28%;
+  top: 84%;
+  left: 48%;
 }
 
 #dimensionMFZ_LHS {
   position: absolute;
-  top: 10%;
-  left: -4%;
+  top: 12%;
+  left: 17%;
 }
 
 #dimensionMFZ_RHS {
   position: absolute;
-  top: 10%;
-  left: 61%;
+  top: 12%;
+  left: 78%;
 }
 
 #dimensionDMFZ_LHS {
   position: absolute;
-  top: 3%;
-  left: -4%;
+  top: 5%;
+  left: 15%;
 }
 
 #dimensionDMFZ_RHS {
   position: absolute;
-  top: 3%;
-  left: 61%;
+  top: 5%;
+  left: 81%;
 }
 
 #dimensionZ2_LHS {
   position: absolute;
-  top: 76%;
-  left: 18%;
+  top: 78%;
+  left: 35%;
 }
 
 #dimensionZ2_RHS {
   position: absolute;
-  top: 76%;
-  left: 39%;
+  top: 78%;
+  left: 55%;
 }
 
 #dimension88 {
   position: absolute;
-  top: 10%;
-  left: 79.5%;
+  top: 12%;
+  left: 90%;
 }
 
 #cableDim {
   position: absolute;
-  top: 73%;
-  left: 70%;
+  top: 75%;
+  left: 81%;
 }
 
 #lengthPlusModule {
   position: absolute;
-  top: 3%;
-  left: 49%;
+  top: 5%;
+  left: 58%;
 }
 
 #length {
   position: absolute;
-  top: 86.5%;
-  left: 43%;
+  top: 89%;
+  left: 55%;
 }
 
 #height {
   position: absolute;
-  top: 41%;
-  left: -7%;
+  top: 43%;
+  left: 4%;
 }
 
 #lengthFrontToApeture {
   position: absolute;
-  top: 10%;
-  left: 65%;
+  top: 12%;
+  left: 74%;
 }
 
 /*--------------------------------------------- Drawing Request Styles --------------------------------------------- */
 
 .drawingRequestForm {
-  width: 460px;
-  text-align: center;
   background-color: white;
   border: 3px solid #022073;
-  border-radius: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  margin: 10px;
   z-index: 1;
   display: none;
-  align-items: center;
 }
 
 .sendDrawingRequestBtn {
@@ -352,6 +353,12 @@ output {
 /*--------------------------------------------- Media Queries For Responsive a web-page --------------------------------------------- */
 
 @media screen and (max-width: 475px) {
+}
+
+@media screen and (max-width: 770px) {
+  .imgSideView {
+    width: 337px;
+  }
   .container3 {
     border: none;
   }
@@ -361,70 +368,64 @@ output {
   .container3RHS {
     border: none;
   }
-  .container4RHS > * {
-    display: block;
-  }
   #lengthPlusModule {
-    top: -1%;
-    left: 40%;
+    top: 2%;
+    left: 55%;
   }
   #dimension88 {
-    top: 6%;
-    left: 68%;
+    top: 9%;
+    left: 89%;
   }
   #lengthFrontToApeture {
-    top: 6%;
-    left: 53%;
+    top: 9%;
+    left: 72%;
   }
   #dimensionA3 {
-    top: 6%;
-    left: 3%;
+    top: 9%;
+    left: 23%;
   }
   #dimensionA2 {
-    top: 23%;
-    left: -9%;
+    top: 26%;
+    left: 10%;
   }
   #dimensionA1 {
-    top: 53%;
-    left: -9%;
+    top: 55%;
+    left: 10%;
   }
   #height {
-    top: 39%;
-    left: -18%;
+    top: 41%;
+    left: 1%;
   }
   #outputApetureHeight {
-    top: 39%;
-    left: -9%;
+    top: 41%;
+    left: 12%;
   }
   #length {
-    top: 83%;
-    left: 32%;
+    top: 85%;
+    left: 50%;
   }
   #dimensionWcT {
-    top: 77%;
-    left: 24%;
-  }
-  #dimension100_LHS {
-    top: 70%;
-    left: 5%;
-  }
-  #dimension100_RHS {
-    top: 70%;
+    top: 79%;
     left: 43%;
   }
+  #dimension100_LHS {
+    top: 72%;
+    left: 25%;
+  }
+  #dimension100_RHS {
+    top: 72%;
+    left: 62%;
+  }
   #outputApetureWidth {
-    top: 70%;
-    left: 24%;
+    top: 72%;
+    left: 43%;
   }
   #cableDim {
-    top: 70%;
-    left: 59%;
+    top: 72%;
+    left: 79%;
   }
-}
-
-@media screen and (max-width: 770px) {
-  .imgSideView {
-    width: 337px;
+  .drawingRequestForm {
+    width: 375px;
   }
 }
 
@@ -434,7 +435,7 @@ output {
   }
 }
 
-@media screen and (max-width: 1570px) {
+@media screen and (max-width: 1520px) {
   .container2 {
     flex-direction: column;
   }

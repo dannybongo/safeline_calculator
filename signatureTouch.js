@@ -352,29 +352,22 @@ function reset(){
 }
 
 const returnHomeBtn = document.getElementById("homeBtn");
-returnHomeBtn.addEventListener("click", returnHome);
-
-function returnHome(){
+returnHomeBtn.addEventListener('click', () => {
   window.location.href="../index.html"
-}
+});
 
 const openDrawingRequestBtn = document.getElementById("requestDrawingBtn");
-openDrawingRequestBtn.addEventListener("click", openDrawingRequest);
-
-function openDrawingRequest(){
+openDrawingRequestBtn.addEventListener('click', () => {
   document.getElementById("drawingRequestForm").style.display = "flex";
-}
+});
 
 const returnBtn = document.getElementById("returnBtn");
-returnBtn.addEventListener("click", returnPage);
-
-function returnPage(){
+returnBtn.addEventListener('click', () => {
   document.getElementById("drawingRequestForm").style.display = "none";
-}
+});
 
 const sendDrawingRequestBtn = document.getElementById("sendDrawingRequestBtn");
 sendDrawingRequestBtn.addEventListener("click", sendDrawingRequest);
-
 
 function sendDrawingRequest(){
   const drawingNumber = document.getElementById('drawingNumber').value;
@@ -425,7 +418,24 @@ function sendDrawingRequest(){
   window.location.href = emailLink;
 }
 
+const printBtn = document.getElementById("printBtn");
+printBtn.addEventListener('click', print);
 
+ function print(){
+    let printElement = document.getElementById("container1");
+
+    let options = {
+      margin:          0.5,
+      filename:        "SignatureTouch.pdf",
+      image:           {type: "jpeg", quality: 1},
+      html2canvas:     {scale: 1.5},
+      jsPDF:           {unit: "mm", format: "A3", orientation:"landscape", precision: "12"}
+    };
+
+    html2pdf().set(options).from(printElement).save();
+    }
+
+//https://blog.bitsrc.io/how-to-export-webpage-to-pdf-using-javascript-html2pdf-and-jspdf-6cdd549618c
 /*
 lessons learnt
 
