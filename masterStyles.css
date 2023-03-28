@@ -5,9 +5,6 @@
   box-sizing: border-box;
   font-family: monospace, sans-serif;
   color: black;
-
-  /* outline: auto;
-  outline-color: red; */
 }
 
 /*--------------------------------------------- Main Container Styles --------------------------------------------- */
@@ -15,7 +12,6 @@
 .container1 {
   text-align: center;
   margin-top: 10px;
-  /* position: absolute; */
 }
 
 .container2 {
@@ -103,11 +99,11 @@ form {
   align-items: center;
 }
 
-.formDiv2 {
+/* .formDiv2 {
   display: flex;
   text-align: justify;
   flex-direction: column;
-}
+} */
 
 #weight {
   background-color: #f0f0f0;
@@ -134,12 +130,21 @@ input {
   text-align: center;
 }
 
-/* output {
+.drawingRequestForm {
+  background-color: white;
+  border: 3px solid #022073;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  z-index: 1;
+  display: none;
+}
+
+.sendDrawingRequestBtn {
   margin-top: 10px;
-  width: 160px;
-  margin-left: auto;
-  height: 20px;
-} */
+}
 
 #DetectorInfoContainer {
   display: flex;
@@ -158,182 +163,6 @@ input {
   text-align: left;
 }
 
-.labelDetInfo {
-  text-align: left;
-}
-
-#calculateBtn {
-  margin-top: 10px;
-}
-
-.buttons {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-#info-tooltip-container {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-#weight {
-  margin-top: 10px;
-  width: 160px;
-  margin-left: auto;
-}
-
-/*--------------------------------------------- Output Positioning On Image --------------------------------------------- */
-
-#outputApetureHeight {
-  position: absolute;
-  top: 43%;
-  left: 12%;
-}
-
-#outputApetureWidth {
-  position: absolute;
-  top: 75%;
-  left: 45.5%;
-}
-
-#dimension100_LHS {
-  position: absolute;
-  top: 75%;
-  left: 26.5%;
-}
-
-#dimension100_RHS {
-  position: absolute;
-  top: 75%;
-  left: 65%;
-}
-
-#dimensionWcT {
-  position: absolute;
-  top: 82%;
-  left: 45.5%;
-}
-
-#dimensionA1 {
-  position: absolute;
-  top: 28%;
-  left: 12%;
-}
-
-#dimensionA2 {
-  position: absolute;
-  top: 58%;
-  left: 12%;
-}
-
-#dimensionA3 {
-  position: absolute;
-  top: 12%;
-  left: 25%;
-}
-
-#dimensionThk_RHS {
-  position: absolute;
-  top: 90%;
-  left: 78%;
-}
-
-#dimensionThk_LHS {
-  position: absolute;
-  top: 90%;
-  left: 19%;
-}
-
-#dimensionZ {
-  position: absolute;
-  top: 90%;
-  left: 48%;
-}
-
-#dimensionZcT {
-  position: absolute;
-  top: 84%;
-  left: 48%;
-}
-
-#dimensionMFZ_LHS {
-  position: absolute;
-  top: 12%;
-  left: 17%;
-}
-
-#dimensionMFZ_RHS {
-  position: absolute;
-  top: 12%;
-  left: 78%;
-}
-
-#dimensionDMFZ_LHS {
-  position: absolute;
-  top: 5%;
-  left: 15%;
-}
-
-#dimensionDMFZ_RHS {
-  position: absolute;
-  top: 5%;
-  left: 81%;
-}
-
-#dimensionZ2_LHS {
-  position: absolute;
-  top: 78%;
-  left: 35%;
-}
-
-#dimensionZ2_RHS {
-  position: absolute;
-  top: 78%;
-  left: 55%;
-}
-
-#dimension88 {
-  position: absolute;
-  top: 12%;
-  left: 90%;
-}
-
-#cableDim {
-  position: absolute;
-  top: 75%;
-  left: 81%;
-}
-
-#lengthPlusModule {
-  position: absolute;
-  top: 5%;
-  left: 58%;
-}
-
-#length {
-  position: absolute;
-  top: 89%;
-  left: 55%;
-}
-
-#height {
-  position: absolute;
-  top: 43%;
-  left: 4%;
-}
-
-#lengthFrontToApeture {
-  position: absolute;
-  top: 12%;
-  left: 74%;
-}
-
-/*--------------------------------------------- Drawing Request Styles --------------------------------------------- */
-
 .drawingRequestForm {
   background-color: white;
   border: 3px solid #022073;
@@ -350,93 +179,6 @@ input {
   margin-top: 10px;
 }
 
-/*--------------------------------------------- Media Queries For Responsive a web-page --------------------------------------------- */
-
-@media screen and (max-width: 475px) {
-}
-
-@media screen and (max-width: 770px) {
-  .imgSideView {
-    width: 337px;
-  }
-  .container3 {
-    border: none;
-  }
-  .container3LHS {
-    border: none;
-  }
-  .container3RHS {
-    border: none;
-  }
-  #lengthPlusModule {
-    top: 2%;
-    left: 55%;
-  }
-  #dimension88 {
-    top: 9%;
-    left: 89%;
-  }
-  #lengthFrontToApeture {
-    top: 9%;
-    left: 72%;
-  }
-  #dimensionA3 {
-    top: 9%;
-    left: 23%;
-  }
-  #dimensionA2 {
-    top: 26%;
-    left: 10%;
-  }
-  #dimensionA1 {
-    top: 55%;
-    left: 10%;
-  }
-  #height {
-    top: 41%;
-    left: 1%;
-  }
-  #outputApetureHeight {
-    top: 41%;
-    left: 12%;
-  }
-  #length {
-    top: 85%;
-    left: 50%;
-  }
-  #dimensionWcT {
-    top: 79%;
-    left: 43%;
-  }
-  #dimension100_LHS {
-    top: 72%;
-    left: 25%;
-  }
-  #dimension100_RHS {
-    top: 72%;
-    left: 62%;
-  }
-  #outputApetureWidth {
-    top: 72%;
-    left: 43%;
-  }
-  #cableDim {
-    top: 72%;
-    left: 79%;
-  }
-  .drawingRequestForm {
-    width: 375px;
-  }
-}
-
-@media screen and (max-width: 1090px) {
-  .container3RHS {
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 1520px) {
-  .container2 {
-    flex-direction: column;
-  }
+.buttons{
+  margin-top: 10px;
 }

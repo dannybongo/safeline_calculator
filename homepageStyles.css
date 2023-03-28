@@ -1,0 +1,19 @@
+.homepageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.note {
+  color: red;
+  position: absolute;
+  top: 65%;
+  left: 25%;
+}
+
+@media screen and (max-width: 1085px) {
+  .container2 {
+    flex-direction: column;
+  }
+}

@@ -11,22 +11,26 @@
   <body>
     <div class="container1" id="container1">
       <h1>Mettler Toledo</h1>
-      <h2>Signature Touch</h2>
+      <h2>Profile</h2>
       <div class="container2">
         <div class="container3LHS">
           <form action="" method="GET">
             <h2>Inputs</h2>
             <div class="formDiv">
               <label for="detectorType">Detector Type:</label>
-              <select id="detectorType" name="detectorType">
+              <select id="detectorType" name="detectorType" required>
                 <option value="" disabled selected hidden>Select</option>
+                <option value="signatureTouch">Signature Touch</option>
+                <option value="rzSignatureTouch">RZ Signature Touch</option>
+                <option value="signatureTouch">Signature Touch</option>
+                <option value="rzSignatureTouch">RZ Signature Touch</option>
                 <option value="signatureTouch">Signature Touch</option>
                 <option value="rzSignatureTouch">RZ Signature Touch</option>
               </select>
             </div>
             <div class="formDiv">
-              <label for="caseMaterialType">Case Material:</label>
-              <select id="caseMaterialType" name="caseMaterialType">
+              <label for="caseMaterial">Case Material:</label>
+              <select id="caseMaterial" name="caseMaterial" required>
                 <option value="" disabled selected hidden>Select</option>
                 <option value="stainlessSteel">Stainless Steel</option>
                 <option value="paintedAluminium">Painted Aluminium</option>
@@ -34,7 +38,7 @@
             </div>
             <div class="formDiv">
               <label for="caseDutyType">Case Type:</label>
-              <select id="caseDutyType" name="caseDutyType">
+              <select id="caseDutyType" name="caseDutyType" required>
                 <option value="" disabled selected hidden>Select</option>
                 <option value="mediumDuty">Medium Duty</option>
                 <option value="heavyDuty">Heavy Duty</option>
@@ -44,20 +48,20 @@
               <label>Apeture Height (mm):</label>
               <input
                 type="text"
-                id="apetureHeight"
-                name="apetureHeight"
+                id="inputApetureHeight"
+                name="inputApetureHeight"
                 placeholder="Apeture Height"
-              
+                required
               />
             </div>
             <div class="formDiv">
               <label>Apeture Width (mm):</label>
               <input
                 type="text"
-                id="apetureWidth"
-                name="apetureWidth"
+                id="inputApetureWidth"
+                name="inputApetureWidth"
                 placeholder="Apeture Width"
-              
+                required
               />
             </div>
             <div class="buttons">
@@ -137,7 +141,7 @@
             id="drawingNumber"
             name="drawingNumber"
             placeholder="Drawing Number"
-          
+            required
           />
         </div>
         <div class="formDiv">
