@@ -1,0 +1,234 @@
+/*--------------------------------------------- Output Positioning On Image --------------------------------------------- */
+
+#dimension_ApetureHeight {
+  position: absolute;
+  top: 43%;
+  left: 12%;
+}
+
+#dimension_ApetureWidth {
+  position: absolute;
+  top: 75%;
+  left: 45.5%;
+}
+
+#dimension_ApetureWidthToFoot_LHS {
+  position: absolute;
+  top: 75%;
+  left: 26.5%;
+}
+
+#dimension_ApetureWidthToFoot_RHS {
+  position: absolute;
+  top: 75%;
+  left: 65%;
+}
+
+#dimension_FootCentresSide {
+  position: absolute;
+  top: 82%;
+  left: 45.5%;
+}
+
+#dimension_A1 {
+  position: absolute;
+  top: 28%;
+  left: 12%;
+}
+
+#dimension_A2 {
+  position: absolute;
+  top: 58%;
+  left: 12%;
+}
+
+#dimension_A3 {
+  position: absolute;
+  top: 12%;
+  left: 25%;
+}
+
+#dimension_FlangeThickness_RHS {
+  position: absolute;
+  top: 90%;
+  left: 78%;
+}
+
+#dimension_FlangeThickness_LHS {
+  position: absolute;
+  top: 90%;
+  left: 19%;
+}
+
+#dimension_Width {
+  position: absolute;
+  top: 90%;
+  left: 48%;
+}
+
+#dimension_FootCentresFront {
+  position: absolute;
+  top: 84%;
+  left: 48%;
+}
+
+#dimension_MFZ_LHS {
+  position: absolute;
+  top: 12%;
+  left: 17%;
+}
+
+#dimension_MFZ_RHS {
+  position: absolute;
+  top: 12%;
+  left: 78%;
+}
+
+#dimension_DMFZ_LHS {
+  position: absolute;
+  top: 5%;
+  left: 15%;
+}
+
+#dimension_DMFZ_RHS {
+  position: absolute;
+  top: 5%;
+  left: 81%;
+}
+
+#dimension_HalfFootCentresFront_LHS {
+  position: absolute;
+  top: 78%;
+  left: 35%;
+}
+
+#dimension_HalfFootCentresFront_RHS {
+  position: absolute;
+  top: 78%;
+  left: 55%;
+}
+
+#dimension_Module {
+  position: absolute;
+  top: 12%;
+  left: 90%;
+}
+
+#dimension_CableDim {
+  position: absolute;
+  top: 75%;
+  left: 81%;
+}
+
+#dimension_LengthPlusModule {
+  position: absolute;
+  top: 5%;
+  left: 58%;
+}
+
+#dimension_Length {
+  position: absolute;
+  top: 89%;
+  left: 55%;
+}
+
+#dimension_Height {
+  position: absolute;
+  top: 43%;
+  left: 4%;
+}
+
+#dimension_LengthFrontToApeture {
+  position: absolute;
+  top: 12%;
+  left: 74%;
+}
+
+/*--------------------------------------------- Media Queries For Responsive a web-page --------------------------------------------- */
+
+
+@media screen and (max-width: 770px) {
+  .imgSideView {
+    width: 337px;
+  }
+  .container3 {
+    border: none;
+  }
+  .container3LHS {
+    border: none;
+  }
+  .container3RHS {
+    border: none;
+  }
+  #dimension_LengthPlusModule {
+    top: 2%;
+    left: 55%;
+  }
+  #dimension_Module {
+    top: 9%;
+    left: 89%;
+  }
+  #dimension_LengthFrontToApeture {
+    top: 9%;
+    left: 72%;
+  }
+  #dimension_A3 {
+    top: 9%;
+    left: 23%;
+  }
+  #dimension_A2 {
+    top: 26%;
+    left: 10%;
+  }
+  #dimension_A1 {
+    top: 55%;
+    left: 10%;
+  }
+  #dimension_Height {
+    top: 41%;
+    left: 1%;
+  }
+  #dimension_ApetureHeight {
+    top: 41%;
+    left: 12%;
+  }
+  #dimension_Length {
+    top: 85%;
+    left: 50%;
+  }
+  #dimension_FootCentresSide {
+    top: 79%;
+    left: 43%;
+  }
+  #dimension_ApetureWidthToFoot_LHS {
+    top: 72%;
+    left: 25%;
+  }
+  #dimension_ApetureWidthToFoot_RHS {
+    top: 72%;
+    left: 62%;
+  }
+  #dimension_ApetureWidth {
+    top: 72%;
+    left: 43%;
+  }
+  #dimension_CableDim {
+    top: 72%;
+    left: 79%;
+  }
+  .drawingRequestForm {
+    width: 375px;
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  .container3RHS {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1520px) {
+  .container2 {
+    flex-direction: column;
+  }
+}

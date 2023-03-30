@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Signature Touch Calculation</title>
-    <link rel="stylesheet" href="masterStyles.css" />
-    <link rel="stylesheet" href="sigTouchStyles.css" />
+    <title>Profile Calculation</title>
+    <link rel="stylesheet" href="/masterStyles.css" />
+    <link rel="stylesheet" href="profileStyles.css" />
   </head>
   <body>
     <div class="container1" id="container1">
@@ -20,17 +20,22 @@
               <label for="detectorType">Detector Type:</label>
               <select id="detectorType" name="detectorType" required>
                 <option value="" disabled selected hidden>Select</option>
-                <option value="signatureTouch">Signature Touch</option>
-                <option value="rzSignatureTouch">RZ Signature Touch</option>
-                <option value="signatureTouch">Signature Touch</option>
-                <option value="rzSignatureTouch">RZ Signature Touch</option>
-                <option value="signatureTouch">Signature Touch</option>
-                <option value="rzSignatureTouch">RZ Signature Touch</option>
+                <option value="profile">Profile</option>
+                <option value="RZ_Profile">RZ Profile</option>>
+                <option value="RB_Profile">RB Profile</option>
               </select>
             </div>
             <div class="formDiv">
-              <label for="caseMaterial">Case Material:</label>
-              <select id="caseMaterial" name="caseMaterial" required>
+              <label for="softwareType">Software Type:</label>
+              <select id="softwareType" name="softwareType" required>
+                <option value="" disabled selected hidden>Select</option>
+                <option value="standard_Software">Standard</option>
+                <option value="LS_Software">LS</option>
+              </select>
+            </div>
+            <div class="formDiv">
+              <label for="caseMaterialType">Case Material:</label>
+              <select id="caseMaterialType" name="caseMaterial" required>
                 <option value="" disabled selected hidden>Select</option>
                 <option value="stainlessSteel">Stainless Steel</option>
                 <option value="paintedAluminium">Painted Aluminium</option>
@@ -46,23 +51,11 @@
             </div>
             <div class="formDiv">
               <label>Apeture Height (mm):</label>
-              <input
-                type="text"
-                id="inputApetureHeight"
-                name="inputApetureHeight"
-                placeholder="Apeture Height"
-                required
-              />
+              <input type="text" id="inputApetureHeight" name="inputApetureHeight" placeholder="Apeture Height" required/>
             </div>
             <div class="formDiv">
               <label>Apeture Width (mm):</label>
-              <input
-                type="text"
-                id="inputApetureWidth"
-                name="inputApetureWidth"
-                placeholder="Apeture Width"
-                required
-              />
+              <input type="text" id="inputApetureWidth" name="inputApetureWidth" placeholder="Apeture Width" required/>
             </div>
             <div class="buttons">
               <button type="button" id="calculateBtn">Calculate</button>
@@ -77,7 +70,7 @@
               <label for="detectorInfo" id="labelDetInfo"
                 >Detector Information:</label
               >
-              <output type="text" id="detectorInfoOutput"></output>
+              <output type="text" id="outputDetectorInfo"></output>
             </div>
             <div class="buttons2">
               <button type="button" id="requestDrawingBtn">
@@ -94,41 +87,40 @@
           <div class="container4RHS">
             <img
               class="imgSideView"
-              src="images/signatureTouchSideView.jpg"
+              src="profileSideView.jpg"
               alt="Signature Touch Metal Detector"
             />
-            <output type="text" id="outputApetureHeight"></output>
-            <output type="text" id="outputApetureWidth"></output>
-            <output type="text" id="dimensionA1"></output>
-            <output type="text" id="dimensionA2"></output>
-            <output type="text" id="dimensionA3"></output>
-            <output type="text" id="dimension100_LHS"></output>
-            <output type="text" id="dimension100_RHS"></output>
-            <output type="text" id="cableDim"></output>
-            <output type="text" id="lengthFrontToApeture"></output>
-            <output type="text" id="length"></output>
-            <output type="text" id="lengthPlusModule"></output>
-            <output type="text" id="height"></output>
-            <output type="text" id="dimension88"></output>
-            <output type="text" id="dimensionWcT"></output>
+            <output type="text" id="dimension_ApetureHeight"></output>
+            <output type="text" id="dimension_ApetureWidth"></output>
+            <output type="text" id="dimension_A1"></output>
+            <output type="text" id="dimension_A2"></output>
+            <output type="text" id="dimension_A3"></output>
+            <output type="text" id="dimension_ApetureWidthToFoot_LHS"></output>
+            <output type="text" id="dimension_ApetureWidthToFoot_RHS"></output>
+            <output type="text" id="dimension_CableDim"></output>
+            <output type="text" id="dimension_LengthFrontToApeture"></output>
+            <output type="text" id="dimension_Length"></output>
+            <output type="text" id="dimension_LengthPlusModule"></output>
+            <output type="text" id="dimension_Height"></output>
+            <output type="text" id="dimension_Module"></output>
+            <output type="text" id="dimension_FootCentresSide"></output>
           </div>
           <div class="container4RHS">
             <img
               class="imgFrontView"
-              src="images/signatureTouchFrontView.jpg"
+              src="profileFrontView.jpg"
               alt="Signature Touch Metal Detector"
             />
-            <output type="text" id="dimensionZ2_LHS"></output>
-            <output type="text" id="dimensionZ2_RHS"></output>
-            <output type="text" id="dimensionZ"></output>
-            <output type="text" id="dimensionZcT"></output>
-
-            <output type="text" id="dimensionThk_LHS"></output>
-            <output type="text" id="dimensionThk_RHS"></output>
-            <output type="text" id="dimensionMFZ_LHS"></output>
-            <output type="text" id="dimensionMFZ_RHS"></output>
-            <output type="text" id="dimensionDMFZ_LHS"></output>
-            <output type="text" id="dimensionDMFZ_RHS"></output>
+            <output type="text" id="dimension_HalfFootCentresFront_LHS"></output>
+            <output type="text" id="dimension_HalfFootCentresFront_RHS"></output>
+            <output type="text" id="dimension_Width"></output>
+            <output type="text" id="dimension_FootCentresFront"></output>
+            <output type="text" id="dimension_FlangeThickness_LHS"></output>
+            <output type="text" id="dimension_FlangeThickness_RHS"></output>
+            <output type="text" id="dimension_MFZ_LHS"></output>
+            <output type="text" id="dimension_MFZ_RHS"></output>
+            <output type="text" id="dimension_DMFZ_LHS"></output>
+            <output type="text" id="dimension_DMFZ_RHS"></output>
           </div>
         </div>
       </div>
@@ -201,7 +193,7 @@
         </div>
       </form>
     </div>
-    <script src="signatureTouch.js"></script>
+    <script src="profile.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
       integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
