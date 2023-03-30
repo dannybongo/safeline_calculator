@@ -1,144 +1,144 @@
 /*--------------------------------------------- Output Positioning On Image --------------------------------------------- */
 
-#outputApetureHeight {
+#dimension_ApetureHeight {
   position: absolute;
   top: 43%;
   left: 12%;
 }
 
-#outputApetureWidth {
+#dimension_ApetureWidth {
   position: absolute;
   top: 75%;
   left: 45.5%;
 }
 
-#dimension100_LHS {
+#dimension_ApetureWidthToFoot_LHS {
   position: absolute;
   top: 75%;
   left: 26.5%;
 }
 
-#dimension100_RHS {
+#dimension_ApetureWidthToFoot_RHS {
   position: absolute;
   top: 75%;
   left: 65%;
 }
 
-#dimensionWcT {
+#dimension_FootCentresSide {
   position: absolute;
   top: 82%;
   left: 45.5%;
 }
 
-#dimensionA1 {
+#dimension_A1 {
   position: absolute;
   top: 28%;
   left: 12%;
 }
 
-#dimensionA2 {
+#dimension_A2 {
   position: absolute;
   top: 58%;
   left: 12%;
 }
 
-#dimensionA3 {
+#dimension_A3 {
   position: absolute;
   top: 12%;
   left: 25%;
 }
 
-#dimensionThk_RHS {
+#dimension_FlangeThickness_RHS {
   position: absolute;
   top: 90%;
   left: 78%;
 }
 
-#dimensionThk_LHS {
+#dimension_FlangeThickness_LHS {
   position: absolute;
   top: 90%;
   left: 19%;
 }
 
-#dimensionZ {
+#dimension_Width {
   position: absolute;
   top: 90%;
   left: 48%;
 }
 
-#dimensionZcT {
+#dimension_FootCentresFront {
   position: absolute;
   top: 84%;
   left: 48%;
 }
 
-#dimensionMFZ_LHS {
+#dimension_MFZ_LHS {
   position: absolute;
   top: 12%;
   left: 17%;
 }
 
-#dimensionMFZ_RHS {
+#dimension_MFZ_RHS {
   position: absolute;
   top: 12%;
   left: 78%;
 }
 
-#dimensionDMFZ_LHS {
+#dimension_DMFZ_LHS {
   position: absolute;
   top: 5%;
   left: 15%;
 }
 
-#dimensionDMFZ_RHS {
+#dimension_DMFZ_RHS {
   position: absolute;
   top: 5%;
   left: 81%;
 }
 
-#dimensionZ2_LHS {
+#dimension_HalfFootCentresFront_LHS {
   position: absolute;
   top: 78%;
   left: 35%;
 }
 
-#dimensionZ2_RHS {
+#dimension_HalfFootCentresFront_RHS {
   position: absolute;
   top: 78%;
   left: 55%;
 }
 
-#dimension88 {
+#dimension_Module {
   position: absolute;
   top: 12%;
   left: 90%;
 }
 
-#cableDim {
+#dimension_CableDim {
   position: absolute;
   top: 75%;
   left: 81%;
 }
 
-#lengthPlusModule {
+#dimension_LengthPlusModule {
   position: absolute;
   top: 5%;
   left: 58%;
 }
 
-#length {
+#dimension_Length {
   position: absolute;
   top: 89%;
   left: 55%;
 }
 
-#height {
+#dimension_Height {
   position: absolute;
   top: 43%;
   left: 4%;
 }
 
-#lengthFrontToApeture {
+#dimension_LengthFrontToApeture {
   position: absolute;
   top: 12%;
   left: 74%;
@@ -160,59 +160,59 @@
   .container3RHS {
     border: none;
   }
-  #lengthPlusModule {
+  #dimension_LengthPlusModule {
     top: 2%;
     left: 55%;
   }
-  #dimension88 {
+  #dimension_Module {
     top: 9%;
     left: 89%;
   }
-  #lengthFrontToApeture {
+  #dimension_LengthFrontToApeture {
     top: 9%;
     left: 72%;
   }
-  #dimensionA3 {
+  #dimension_A3 {
     top: 9%;
     left: 23%;
   }
-  #dimensionA2 {
+  #dimension_A2 {
     top: 26%;
     left: 10%;
   }
-  #dimensionA1 {
+  #dimension_A1 {
     top: 55%;
     left: 10%;
   }
-  #height {
+  #dimension_Height {
     top: 41%;
     left: 1%;
   }
-  #outputApetureHeight {
+  #dimension_ApetureHeight {
     top: 41%;
     left: 12%;
   }
-  #length {
+  #dimension_Length {
     top: 85%;
     left: 50%;
   }
-  #dimensionWcT {
+  #dimension_FootCentresSide {
     top: 79%;
     left: 43%;
   }
-  #dimension100_LHS {
+  #dimension_ApetureWidthToFoot_LHS {
     top: 72%;
     left: 25%;
   }
-  #dimension100_RHS {
+  #dimension_ApetureWidthToFoot_RHS {
     top: 72%;
     left: 62%;
   }
-  #outputApetureWidth {
+  #dimension_ApetureWidth {
     top: 72%;
     left: 43%;
   }
-  #cableDim {
+  #dimension_CableDim {
     top: 72%;
     left: 79%;
   }

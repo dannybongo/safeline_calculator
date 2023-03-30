@@ -5,7 +5,12 @@
   box-sizing: border-box;
   font-family: monospace, sans-serif;
   color: black;
+
+  outline-color: red;
+  outline-width: 1px;
 }
+
+
 
 /*--------------------------------------------- Main Container Styles --------------------------------------------- */
 
@@ -74,6 +79,19 @@ button {
   width: 190px;
 }
 
+a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: red;
+  border-radius: 5px;
+  color: #022073;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  font-size: 16px;
+  transition: background-color 0.8s ease;
+  width: 190px;
+}
+
 img {
   border-radius: 20px;
 }
@@ -99,16 +117,12 @@ form {
   align-items: center;
 }
 
-/* .formDiv2 {
-  display: flex;
-  text-align: justify;
-  flex-direction: column;
-} */
 
-#weight {
-  background-color: #f0f0f0;
+#detector_Weight {
   border-radius: 5px;
   color: #022073;
+  width: 150px;
+  margin-top: 10px;
 }
 
 option {
@@ -152,7 +166,7 @@ input {
   align-items: flex-start;
 }
 
-#detectorInfoOutput {
+#outputDetectorInfo {
   margin-top: 10px;
   margin-bottom: 10px;
   width: 344px;

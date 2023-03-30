@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signature Touch Calculation</title>
-    <link rel="stylesheet" href="masterStyles.css" />
-    <link rel="stylesheet" href="sigTouchStyles.css" />
+    <link rel="stylesheet" href="/masterStyles.css" />
+    <link rel="stylesheet" href="/detectorSignatureTouch/sigTouchStyles.css" />
   </head>
   <body>
     <div class="container1" id="container1">
@@ -66,14 +66,14 @@
             </div>
             <h2>Output</h2>
             <div class="formDiv">
-              <label for="Weight">Approx' Weight (Kg):</label>
-              <output type="text" id="weight"></output>
+              <label for="detector_Weight">Approx' Weight (Kg):</label>
+              <output type="text" id="detector_Weight"></output>
             </div>
             <div id="DetectorInfoContainer">
               <label for="detectorInfo" id="labelDetInfo"
                 >Detector Information:</label
               >
-              <output type="text" id="detectorInfoOutput"></output>
+              <output type="text" id="outputDetectorInfo"></output>
             </div>
             <div class="buttons2">
               <button type="button" id="requestDrawingBtn">
@@ -93,20 +93,20 @@
               src="images/signatureTouchSideView.jpg"
               alt="Signature Touch Metal Detector"
             />
-            <output type="text" id="outputApetureHeight"></output>
-            <output type="text" id="outputApetureWidth"></output>
-            <output type="text" id="dimensionA1"></output>
-            <output type="text" id="dimensionA2"></output>
-            <output type="text" id="dimensionA3"></output>
-            <output type="text" id="dimension100_LHS"></output>
-            <output type="text" id="dimension100_RHS"></output>
-            <output type="text" id="cableDim"></output>
-            <output type="text" id="lengthFrontToApeture"></output>
-            <output type="text" id="length"></output>
-            <output type="text" id="lengthPlusModule"></output>
-            <output type="text" id="height"></output>
-            <output type="text" id="dimension88"></output>
-            <output type="text" id="dimensionWcT"></output>
+            <output type="text" id="dimension_ApetureHeight"></output>
+            <output type="text" id="dimension_ApetureWidth"></output>
+            <output type="text" id="dimension_A1"></output>
+            <output type="text" id="dimension_A2"></output>
+            <output type="text" id="dimension_A3"></output>
+            <output type="text" id="dimension_ApetureWidthToFoot_LHS"></output>
+            <output type="text" id="dimension_ApetureWidthToFoot_RHS"></output>
+            <output type="text" id="dimension_CableDim"></output>
+            <output type="text" id="dimension_LengthFrontToApeture"></output>
+            <output type="text" id="dimension_Length"></output>
+            <output type="text" id="dimension_LengthPlusModule"></output>
+            <output type="text" id="dimension_Height"></output>
+            <output type="text" id="dimension_Module"></output>
+            <output type="text" id="dimension_FootCentresSide"></output>
           </div>
           <div class="container4RHS">
             <img
@@ -114,17 +114,16 @@
               src="images/signatureTouchFrontView.jpg"
               alt="Signature Touch Metal Detector"
             />
-            <output type="text" id="dimensionZ2_LHS"></output>
-            <output type="text" id="dimensionZ2_RHS"></output>
-            <output type="text" id="dimensionZ"></output>
-            <output type="text" id="dimensionZcT"></output>
-
-            <output type="text" id="dimensionThk_LHS"></output>
-            <output type="text" id="dimensionThk_RHS"></output>
-            <output type="text" id="dimensionMFZ_LHS"></output>
-            <output type="text" id="dimensionMFZ_RHS"></output>
-            <output type="text" id="dimensionDMFZ_LHS"></output>
-            <output type="text" id="dimensionDMFZ_RHS"></output>
+            <output type="text" id="dimension_HalfFootCentresFront_LHS"></output>
+            <output type="text" id="dimension_HalfFootCentresFront_RHS"></output>
+            <output type="text" id="dimension_Width"></output>
+            <output type="text" id="dimension_FootCentresFront"></output>
+            <output type="text" id="dimension_FlangeThickness_LHS"></output>
+            <output type="text" id="dimension_FlangeThickness_RHS"></output>
+            <output type="text" id="dimension_MFZ_LHS"></output>
+            <output type="text" id="dimension_MFZ_RHS"></output>
+            <output type="text" id="dimension_DMFZ_LHS"></output>
+            <output type="text" id="dimension_DMFZ_RHS"></output>
           </div>
         </div>
       </div>

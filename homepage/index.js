@@ -7,7 +7,7 @@ function openNewWindow(url) {
 
 buttons.forEach(button => {
 
-  //The below three lines are code are temporary and will be modified as more pages are created.
+  //The below three lines of code are temporary and will be modified as more pages are created. This is help users identify which pages are availible
   const buttonText = button.innerHTML
   if (buttonText !== 'Signature Touch') {
     button.style.backgroundColor = '#ff6666';
