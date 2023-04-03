@@ -59,7 +59,7 @@ function calculate() {
   detector_FootCentresSide_Calc(apetureWidth);
   detector_FlangeThickness_Calc(caseDutyType, caseMaterialType);
   detector_CableDim_Calc(caseMaterialType);
-  detectorInfo(detectorType);
+  detectorInfo(detectorType, softwareType);
 
   function detector_FootCentresSide_Calc(apetureWidth) {
     let dimension_FootCentresSide = apetureWidth + 200
@@ -93,30 +93,24 @@ function calculate() {
   }
   function detectorInfo(detectorType, softwareType) {
 
-    console.log(detectorType)
-    console.log(softwareType)
-    console.log(detectorType.value)
-    console.log(softwareType.value)
+    if (detectorType.value === "profile" && softwareType.value === "standard_Software") {
+      document.getElementById("outputDetectorInfo").innerHTML = "Profile metal detectors utilise sophisticated software technology to provide the most advanced metal detection systems for dry product applications on the market with total inspection flexibility for a wide range of applications and products.";
 
+    } else if (detectorType.value === "RZ_Profile" && softwareType.value === "standard_Software") {
+      document.getElementById("outputDetectorInfo").innerHTML = "RZ Profile metal detectors utilise sophisticated software technology to provide the most advanced metal detection systems for dry product applications on the market with total inspection flexibility for a wide range of applications and products.";
 
-    // if (detectorType.value === "profile" && softwareType.value === "standard_Software") {
-    //   document.getElementById("outputDetectorInfo").innerHTML = "Profile metal detectors utilise sophisticated software technology to provide the most advanced metal detection systems for dry product applications on the market with total inspection flexibility for a wide range of applications and products.";
+    } else if (detectorType.value === "RB_Profile" && softwareType.value === "standard_Software") {
+      document.getElementById("outputDetectorInfo").innerHTML = "RB Profile metal detectors Provide the most advanced metal detection system on the market for dry product applications, fully optimised for inspecting large, conveyorised bulk products.";
 
-    // } else if (detectorType.value === "RZ_Profile" && softwareType.value === "standard_Software") {
-    //   document.getElementById("outputDetectorInfo").innerHTML = "RZ Profile metal detectors utilise sophisticated software technology to provide the most advanced metal detection systems for dry product applications on the market with total inspection flexibility for a wide range of applications and products.";
+    } else if (detectorType.value === "profile" && softwareType.value === "LS_Software") {
+      document.getElementById("outputDetectorInfo").innerHTML = "Profile LS metal detectors utilise sophisticated software technology to provide the most advanced metal detection systems for dry product applications on the market with total inspection flexibility for a wide range of applications and products.";
 
-    // } else if (detectorType.value === "RB_Profile" && softwareType.value === "standard_Software") {
-    //   document.getElementById("outputDetectorInfo").innerHTML = "RB Profile metal detectors Provide the most advanced metal detection system on the market for dry product applications, fully optimised for inspecting large, conveyorised bulk products.";
+    } else if (detectorType.value === "RZ_Profile" && softwareType.value === "LS_Software") {
+      document.getElementById("outputDetectorInfo").innerHTML = "RZ Profile LS metal detectors utilise sophisticated software technology to provide the most advanced metal detection systems for dry product applications on the market with total inspection flexibility for a wide range of applications and products.";
 
-    // } else if (detectorType.value === "profile" && softwareType.value === "LS_Software") {
-    //   document.getElementById("outputDetectorInfo").innerHTML = "Profile LS metal detectors utilise sophisticated software technology to provide the most advanced metal detection systems for dry product applications on the market with total inspection flexibility for a wide range of applications and products.";
-
-    // } else if (detectorType.value === "RZ_Profile" && softwareType.value === "LS_Software") {
-    //   document.getElementById("outputDetectorInfo").innerHTML = "RZ Profile LS metal detectors utilise sophisticated software technology to provide the most advanced metal detection systems for dry product applications on the market with total inspection flexibility for a wide range of applications and products.";
-
-    // } else {
-    //   document.getElementById("outputDetectorInfo").innerHTML = "RB Profile LS metal detectors Provide the most advanced metal detection system on the market for dry product applications, fully optimised for inspecting large, conveyorised bulk products.";
-    // }
+    } else {
+      document.getElementById("outputDetectorInfo").innerHTML = "RB Profile LS metal detectors Provide the most advanced metal detection system on the market for dry product applications, fully optimised for inspecting large, conveyorised bulk products.";
+    }
   }
 
   if (detectorType.value === "signatureTouch") {
@@ -475,6 +469,9 @@ correct any else if statements. if statments should end with 'else'
      //why is the case volume for aluminium * 6?
      //The same formula is used for the RZ, but not sure how to use the variables in both calcs
      //Need infomation from Tom on the RZ Al Oversquare figures.
+     //check sig touch and profile for bugs
+     refactor code
+     do readme
 
 
 
