@@ -6,10 +6,7 @@
 }
 
 .note {
-  color: red;
-  position: absolute;
-  top: 65%;
-  left: 25%;
+  color: red;;
 }
 
 @media screen and (max-width: 1085px) {
